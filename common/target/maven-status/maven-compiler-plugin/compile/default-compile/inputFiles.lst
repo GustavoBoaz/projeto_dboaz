@@ -1,0 +1,12 @@
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/interfaces/MiddlewareImpl.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/properties/AppProperties.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/Server.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/enums/StatusCodeEnum.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/abstracts/AbstractController.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/abstracts/AbstractServerUtil.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/models/Request.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/errors/GenericException.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/enums/SeverityEnum.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/models/Route.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/models/Response.java
+/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/common/src/main/java/com/dboaz/utils/server/caller/Caller.java

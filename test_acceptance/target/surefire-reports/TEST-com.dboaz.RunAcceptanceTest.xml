@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.dboaz.RunAcceptanceTest" time="2.704" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance/target/test-classes:/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance/target/classes:/home/gustavo/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/gustavo/.m2/repository/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/gustavo/.m2/repository/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/gustavo/.m2/repository/com/lmax/disruptor/3.3.4/disruptor-3.3.4.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/home/gustavo/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/home/gustavo/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/home/gustavo/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/home/gustavo/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/home/gustavo/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/home/gustavo/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/home/gustavo/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite/1.10.0/junit-platform-suite-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.0/junit-platform-suite-engine-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.jar:"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="user.country.format" value="BR"/>
+    <property name="os.name" value="Linux"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/home/gustavo/.sdkman/candidates/java/17.0.7-tem/lib"/>
+    <property name="sun.java.command" value="/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance/target/surefire/surefirebooter-20240530124148149_3.jar /home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance/target/surefire 2024-05-30T12-41-45_884-jvmRun1 surefire-20240530124148149_1tmp surefire_0-20240530124148149_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance/target/test-classes:/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance/target/classes:/home/gustavo/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/gustavo/.m2/repository/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/gustavo/.m2/repository/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/gustavo/.m2/repository/com/lmax/disruptor/3.3.4/disruptor-3.3.4.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/home/gustavo/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-java/7.15.0/cucumber-java-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-core/7.15.0/cucumber-core-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-gherkin/7.15.0/cucumber-gherkin-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-gherkin-messages/7.15.0/cucumber-gherkin-messages-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/gherkin/26.2.0/gherkin-26.2.0.jar:/home/gustavo/.m2/repository/io/cucumber/messages/22.0.0/messages-22.0.0.jar:/home/gustavo/.m2/repository/io/cucumber/tag-expressions/6.0.0/tag-expressions-6.0.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-expressions/17.0.1/cucumber-expressions-17.0.1.jar:/home/gustavo/.m2/repository/io/cucumber/datatable/7.15.0/datatable-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-plugin/7.15.0/cucumber-plugin-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/docstring/7.15.0/docstring-7.15.0.jar:/home/gustavo/.m2/repository/io/cucumber/html-formatter/20.4.0/html-formatter-20.4.0.jar:/home/gustavo/.m2/repository/io/cucumber/junit-xml-formatter/0.2.0/junit-xml-formatter-0.2.0.jar:/home/gustavo/.m2/repository/io/cucumber/ci-environment/10.0.0/ci-environment-10.0.0.jar:/home/gustavo/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/home/gustavo/.m2/repository/io/cucumber/cucumber-junit-platform-engine/7.15.0/cucumber-junit-platform-engine-7.15.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/home/gustavo/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite/1.10.0/junit-platform-suite-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite-api/1.10.0/junit-platform-suite-api-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite-engine/1.10.0/junit-platform-suite-engine-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-suite-commons/1.10.0/junit-platform-suite-commons-1.10.0.jar:/home/gustavo/.m2/repository/org/junit/platform/junit-platform-launcher/1.10.0/junit-platform-launcher-1.10.0.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/home/gustavo"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-04-18"/>
+    <property name="java.home" value="/home/gustavo/.sdkman/candidates/java/17.0.7-tem"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance/target/surefire/surefirebooter-20240530124148149_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.7+7"/>
+    <property name="user.name" value="gustavo"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="6.5.0-15-generic"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.7+7"/>
+    <property name="localRepository" value="/home/gustavo/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="java.version" value="17.0.7"/>
+    <property name="user.dir" value="/home/gustavo/Documents/BOAZ/Projects/JavaMaven/dboaz/test_acceptance"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.language.format" value="pt"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.7+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="First Scenario" classname="Example Feature" time="0.075">
+    <system-out><![CDATA[
+@Example
+Scenario: First Scenario      &amp#27;[90m# features/example.feature:4&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mI have a step&amp#27;[0m         &amp#27;[90m# com.dboaz.steps.ExampleStep.i_have_a_step()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mI do something&amp#27;[0m         &amp#27;[90m# com.dboaz.steps.ExampleStep.i_do_something()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mI should see something&amp#27;[0m &amp#27;[90m# com.dboaz.steps.ExampleStep.i_should_see_something()&amp#27;[0m
+]]></system-out>
+  </testcase>
+</testsuite>

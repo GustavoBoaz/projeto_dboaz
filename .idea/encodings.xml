@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_auction/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_auction/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_bid/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_bid/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_comment_rating/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_comment_rating/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_logistic/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_logistic/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_messaging/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_messaging/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_notification/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_notification/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_payment/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_payment/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_product/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_product/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_profile/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms_profile/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test_acceptance/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test_acceptance/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test_load/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test_load/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
