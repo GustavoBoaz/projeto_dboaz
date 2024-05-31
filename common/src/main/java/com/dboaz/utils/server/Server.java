@@ -28,7 +28,13 @@ public class Server extends AbstractServerUtil {
     try (ServerSocket server = new ServerSocket(port)) {
       LOGGER.info("Server is running on port: {}", port);
       while (true) {
-        new ClientConnection(server.accept(), this).start();
+        Thread.ofVirtual().start(() -> {
+          try {
+            new ClientConnection(server.accept(), this).start();
+          } catch (IOException e) {
+            LOGGER.error(new GenericException("Error [user connection server]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
+          }
+        });
       }
     } catch (IOException e) {
       LOGGER.error(new GenericException("Error [start server]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));

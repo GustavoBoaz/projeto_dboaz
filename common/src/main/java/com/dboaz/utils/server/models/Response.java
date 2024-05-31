@@ -43,7 +43,7 @@ public class Response {
       try {
         this.out.write(("HTTP/1.1 " + status.getCode() + " " + status.getDescription() + "\n").getBytes());
       } catch (IOException e) {
-        //LOGGER.error(new GenericException("Error in status", SeverityEnum.SEV_001, 500));
+        LOGGER.error(new GenericException("Error in status", SeverityEnum.SEV_001, 500));
       }
       return this;
     }
@@ -52,7 +52,7 @@ public class Response {
       try {
         this.out.write((key + ": " + value + "\n").getBytes());
       } catch (IOException e) {
-        //LOGGER.error(new GenericException("Error in header", SeverityEnum.SEV_001, 500));
+        LOGGER.error(new GenericException("Error in header", SeverityEnum.SEV_001, 500));
       }
       return this;
     }
@@ -71,7 +71,7 @@ public class Response {
         this.out.write("\n".getBytes());
         this.out.write(body.getBytes());
       } catch (IOException e) {
-        //LOGGER.error(new GenericException("Error in body", SeverityEnum.SEV_001, 500));
+        LOGGER.error(new GenericException("Error in body", SeverityEnum.SEV_001, 500));
       }
       return this;
     }
