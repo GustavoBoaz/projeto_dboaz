@@ -16,8 +16,9 @@
     
     <modules>
         <!-- Add modules -->
-        <module>common</module>
-        <module>gateway</module>
+        <module>lib_common</module>
+
+        <module>bff_gateway</module>
 
         <module>ms_auction</module>
         <module>ms_auth</module>
@@ -30,58 +31,7 @@
         <module>ms_product</module>
         <module>ms_profile</module>
         
-        <module>test_acceptance</module>
-        <module>test_load</module>
+        <module>qa_acceptance</module>
     </modules>
-
-    <build>
-        <plugins>
-            <!-- Plugin configure build run java 17 -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.0</version>
-                <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.release}</target>
-                </configuration>
-            </plugin>
-
-            <!-- Plugin configure test engine junit 5 -->
-            <plugin>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.1.2</version>
-            </plugin>
-
-            <!-- Plugin coverage Jacoco -->
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.12</version>
-                <configuration>
-                    <outputFormat>html</outputFormat>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-        </plugins>
-    </build>
 
 </project>
