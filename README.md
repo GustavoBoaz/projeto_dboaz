@@ -440,6 +440,32 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 
 </details>
 
+## Tecnical details
+
+### Linux
+
+```bash
+java --version
+openjdk 21.0.3 2024-04-16 LTS
+OpenJDK Runtime Environment Temurin-21.0.3+9 (build 21.0.3+9-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.3+9 (build 21.0.3+9-LTS, mixed mode, sharing)
+```
+```bash
+mvn --version
+Apache Maven 3.6.3
+Maven home: /usr/share/maven
+Java version: 21.0.3, vendor: Eclipse Adoptium, runtime: /home/gustavo/.sdkman/candidates/java/21.0.3-tem
+Default locale: en_US, platform encoding: UTF-8
+OS name: "linux", version: "6.5.0-15-generic", arch: "amd64", family: "unix"
+```
+```bash
+docker --version
+Docker version 25.0.1
+```
+```bash
+docker-compose --version
+docker-compose version 1.29.2
+```
 ## Test ALL modules local
 
 In current folder run build mvn command `mvn clean test`, ex:
