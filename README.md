@@ -469,7 +469,16 @@ In current folder run sh command `./dev_run.sh <name_module>`, this command buil
 
 This project includes the following scripts that can be used to simplify common tasks:
 
-- `./dev_start.sh`: Creates the application's target and runs the mss in Docker (docker-compose up).
-- `./dev_stop.sh`: Clears the application's target and removes the Docker mss (docker-compose down).
+- `./dev_start_linux.sh`: Creates the application's target and runs the mss in Docker (docker-compose up).
+- `./dev_stop_linux.sh`: Clears the application's target and removes the Docker mss (docker-compose down).
+
+Before running the scripts, make sure to grant execution permissions on your machine using the command `chmod +x nome_do_script.sh`.
+
+## Run docker-compose local: ONLY Windows
+
+This project includes the following scripts that can be used to simplify common tasks:
+
+- `./dev_start_windows.sh`: Creates the application's target and runs the mss in Docker (docker-compose up).
+- `./dev_stop_windows.sh`: Clears the application's target and removes the Docker mss (docker-compose down).
 
 Before running the scripts, make sure to grant execution permissions on your machine using the command `chmod +x nome_do_script.sh`.
