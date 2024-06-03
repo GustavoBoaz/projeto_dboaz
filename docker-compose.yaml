@@ -4,66 +4,88 @@ services:
     container_name: bff_gateway
     build: bff_gateway/
     restart: on-failure
+    ports:
+      - "8000:8080"
     networks:
       - dboaz_net
   ms_auction:
     container_name: ms_auction
     build: ms_auction/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8001:8080"
     networks:
       - dboaz_net
   ms_auth:
     container_name: ms_auth
     build: ms_auth/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8002:8080"
     networks:
       - dboaz_net
   ms_bid:
     container_name: ms_bid
     build: ms_bid/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8003:8080"
     networks:
       - dboaz_net
   ms_comment_rating:
     container_name: ms_comment_rating
     build: ms_comment_rating/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8004:8080"
     networks:
       - dboaz_net
   ms_logistic:
     container_name: ms_logistic
     build: ms_logistic/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8005:8080"
     networks:
       - dboaz_net
   ms_messaging:
     container_name: ms_messaging
     build: ms_messaging/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8006:8080"
     networks:
       - dboaz_net
   ms_notification:
     container_name: ms_notification
     build: ms_notification/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8007:8080"
     networks:
       - dboaz_net
   ms_payment:
     container_name: ms_payment
     build: ms_payment/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8008:8080"
     networks:
       - dboaz_net
   ms_product:
     container_name: ms_product
     build: ms_product/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8009:8080"
     networks:
       - dboaz_net
   ms_profile:
     container_name: ms_profile
     build: ms_profile/
-    restart: "no"
+    restart: on-failure
+    ports:
+      - "8010:8080"
     networks:
       - dboaz_net
 networks:
