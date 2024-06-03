@@ -466,6 +466,30 @@ Docker version 25.0.1
 docker-compose --version
 docker-compose version 1.29.2
 ```
+### Windows
+
+```bash
+java --version
+java 21.0.1 2023-10-17 LTS
+Java(TM) SE Runtime Environment (build 21.0.1+12-LTS-29)
+Java HotSpot(TM) 64-Bit Server VM (build 21.0.1+12-LTS-29, mixed mode, sharing)
+```
+```bash
+mvn --version
+Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
+Maven home: C:\Program Files\Maven\apache-maven-3.9.6
+Java version: 21.0.1, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-21
+Default locale: pt_BR, platform encoding: UTF-8
+OS name: "windows 11", version: "10.0", arch: "amd64", family: "windows"
+```
+```bash
+docker --version
+Docker version 26.1.1, build 4cf5afa
+```
+```bash
+docker-compose --version
+Docker Compose version v2.27.0-desktop.2
+```
 ## Test ALL modules local
 
 In current folder run build mvn command `mvn clean test`, ex:
