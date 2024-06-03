@@ -16,7 +16,7 @@ class MainAppAuthTest {
     private static final String ENVIROMENT = ApplicationProperties.test("enviroment");
 
     @Test
-    public void testMainMethodExists() {
+    void testMainMethodExists() {
         LOGGER.info("[ INIT TEST [ app: {} | env: {} ] - testMainMethodExists ]", APP_NAME, ENVIROMENT);
 
         assertTrue(hasMainMethod(MainAppAuth.class), "O método main não foi encontrado na classe MainAppAuth");
