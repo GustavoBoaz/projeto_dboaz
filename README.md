@@ -465,7 +465,7 @@ In current folder run sh command `./dev_run.sh <name_module>`, this command buil
 ./dev_run.sh ms_auction
 ```
 
-## Run docker-compose local
+## Run docker-compose local: ONLY Linux
 
 This project includes the following scripts that can be used to simplify common tasks:
 

@@ -2,4 +2,4 @@
 
 mvn clean
 
-docker-compose down
+sudo docker-compose down

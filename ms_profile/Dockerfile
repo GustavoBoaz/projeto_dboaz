@@ -11,4 +11,4 @@ COPY target/*.jar /app/myapp.jar
 EXPOSE 8080
 
 # Comando para executar a aplicação
-CMD ["java", "-jar", "/app/myapp.jar"]
+ENTRYPOINT java -jar /app/myapp.jar
