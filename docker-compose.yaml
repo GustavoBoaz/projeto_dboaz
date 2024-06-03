@@ -9,61 +9,61 @@ services:
   ms_auction:
     container_name: ms_auction
     build: ms_auction/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_auth:
     container_name: ms_auth
     build: ms_auth/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_bid:
     container_name: ms_bid
     build: ms_bid/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_comment_rating:
     container_name: ms_comment_rating
     build: ms_comment_rating/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_logistic:
     container_name: ms_logistic
     build: ms_logistic/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_messaging:
     container_name: ms_messaging
     build: ms_messaging/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_notification:
     container_name: ms_notification
     build: ms_notification/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_payment:
     container_name: ms_payment
     build: ms_payment/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_product:
     container_name: ms_product
     build: ms_product/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
   ms_profile:
     container_name: ms_profile
     build: ms_profile/
-    restart: on-failure
+    restart: no
     networks:
       - dboaz_net
 networks:

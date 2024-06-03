@@ -1,5 +1,5 @@
 # Use uma imagem base com o JDK 21
-FROM maven:3-sapmachine-22
+FROM maven:3.9.7-eclipse-temurin-21-alpine
 
 # Defina o diretório de trabalho dentro do contêiner
 WORKDIR /app
@@ -11,4 +11,4 @@ COPY target/*.jar /app/myapp.jar
 EXPOSE 8080
 
 # Comando para executar a aplicação
-CMD ["java", "-jar", "/app/myapp.jar"]
+ENTRYPOINT java -jar /app/myapp.jar
