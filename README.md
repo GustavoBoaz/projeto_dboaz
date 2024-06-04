@@ -2,10 +2,35 @@
 
 The "dboaz-project" is a comprehensive online auction system designed to facilitate the buying and selling of a variety of products in a secure and efficient virtual environment. Below is a detailed description of the main components of the project:
 
-## Description packages
+### Author
+- [@gustavoboaz](https://github.com/GustavoBoaz)
 
-### lib_common/
+### Project skills
+![Linux](https://img.shields.io/badge/Linux--orange?style=for-the-badge)
+![Windows](https://img.shields.io/badge/Windows--brown?style=for-the-badge)
+
+![Java](https://img.shields.io/badge/Java--red?style=for-the-badge)
+![Git](https://img.shields.io/badge/Git--purple?style=for-the-badge)
+![Shell](https://img.shields.io/badge/Shell--magenta?style=for-the-badge)
+![Maven](https://img.shields.io/badge/Maven--green?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker--blue?style=for-the-badge)
+
+![CleanArquitecture](https://img.shields.io/badge/Clean_Architecture--pink?style=for-the-badge)
+![DesingPatters](https://img.shields.io/badge/Design_Patters--violet?style=for-the-badge)
+![CleanCode](https://img.shields.io/badge/Clean_Code--yellow?style=for-the-badge)
+
+![UML](https://img.shields.io/badge/UML--white?style=for-the-badge)
+![Markdown](https://img.shields.io/badge/Markdown--black?style=for-the-badge)
+
+
+<br>
+
+# Description packages
+
+## lib_common/
+
 👨‍💻The lib features common.
+
 <details>
     <summary>🛠 Details</summary>
     <h3>Tree</h3>
@@ -31,15 +56,20 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Features
+#### Feature `properties/` :
+- This feature provide two methods for get properties in folder resources in archive `application.properties` and `application-test.properties`
+##### Diagram
+![ApplicationProperties](https://i.imgur.com/F1PSrzj.png)
 
+### Version
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### bff_gateway/
+## bff_gateway/
 👨‍💻It facilitates communication between different applications through application programming interfaces (APIs).
 <details>
     <summary>🛠 Details</summary>
@@ -65,15 +95,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_auction/
+## ms_auction/
 👨‍💻Responsible for managing auctions, including creation, closing and listing. It may involve timer logic to control the duration of auctions.
 <details>
     <summary>🛠 Details</summary>
@@ -99,15 +129,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_auth/
+## ms_auth/
 👨‍💻Responsible for user management, authentication and authorization.
  Handling access tokens to ensure security.
 <details>
@@ -134,15 +164,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_bid/
+## ms_bid/
 👨‍💻Manages bidding logic during auctions, including tracking user bids.
 <details>
     <summary>🛠 Details</summary>
@@ -168,15 +198,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_comment_rating/
+## ms_comment_rating/
 👨‍💻Handles comments and ratings functionality for buyers and sellers.
 <details>
     <summary>🛠 Details</summary>
@@ -202,15 +232,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_logistic/
+## ms_logistic/
 👨‍💻Manages delivery and logistics information for auctioned products.
 <details>
     <summary>🛠 Details</summary>
@@ -236,15 +266,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_messaging/
+## ms_messaging/
 👨‍💻Provides messaging functionality for communication between users during auctions.
 <details>
     <summary>🛠 Details</summary>
@@ -270,15 +300,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_notification/
+## ms_notification/
 👨‍💻Responsible for sending notifications, such as reminders of upcoming auctions, unread chat messages, etc.
 <details>
     <summary>🛠 Details</summary>
@@ -304,15 +334,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_payment/
+## ms_payment/
 👨‍💻Handles financial transactions, including deposits, fees, and releasing payments upon successful completion of an auction.
 <details>
     <summary>🛠 Details</summary>
@@ -338,15 +368,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_product/
+## ms_product/
 👨‍💻Stores information about the products being auctioned, including descriptions, images, and specific details.
 <details>
     <summary>🛠 Details</summary>
@@ -372,15 +402,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### ms_profile/
+## ms_profile/
 👨‍💻Stores and manages user-specific information such as contact details and preferences.
 <details>
     <summary>🛠 Details</summary>
@@ -406,15 +436,15 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
           └── resources/
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-### qa_acceptance/
+## qa_acceptance/
 👨‍💻Responseible for project of test acceptance
 <details>
     <summary>🛠 Details</summary>
@@ -432,17 +462,19 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
               └── features
   ```
 
-<h3>Version</h3>
+### Version
 
 | Number  | Descrição                                   |
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 
-</details>
+</details><br>
 
-## Tecnical details
+<br>
 
-### Linux
+# Tecnical details
+
+## Linux
 
 ```bash
 java --version
@@ -466,7 +498,7 @@ Docker version 25.0.1
 docker-compose --version
 docker-compose version 1.29.2
 ```
-### Windows
+## Windows
 
 ```bash
 java --version
@@ -490,6 +522,10 @@ Docker version 26.1.1, build 4cf5afa
 docker-compose --version
 Docker Compose version v2.27.0-desktop.2
 ```
+
+<br>
+
+# Builds and Tests
 ## Test ALL modules local
 
 In current folder run build mvn command `mvn clean verify`, ex:
