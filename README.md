@@ -492,10 +492,10 @@ Docker Compose version v2.27.0-desktop.2
 ```
 ## Test ALL modules local
 
-In current folder run build mvn command `mvn clean test`, ex:
+In current folder run build mvn command `mvn clean verify`, ex:
 
 ```bash
-mvn clean test
+mvn clean verify
 ```
 
 ## Build ALL modules local
