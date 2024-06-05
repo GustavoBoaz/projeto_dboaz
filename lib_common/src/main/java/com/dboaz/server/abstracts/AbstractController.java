@@ -1,12 +1,15 @@
 package com.dboaz.server.abstracts;
 
+import com.dboaz.server.enums.StatusCodeEnum;
 import com.dboaz.server.models.Request;
 import com.dboaz.server.models.Response;
 import com.dboaz.utils.enums.SeverityEnum;
 import com.dboaz.utils.errors.GenericException;
+import com.google.gson.Gson;
 
 public abstract class AbstractController {
   private static final String METHOD_NOT_IMPLEMENTED = "Method Not Allowed.";
+  private static final GenericException ERROR = new GenericException(METHOD_NOT_IMPLEMENTED, SeverityEnum.SEV_001, 405);
   
   protected Request request;
   protected Response response;
@@ -35,43 +38,83 @@ public abstract class AbstractController {
       case "PATCH":
         return patch();
       default:
-        throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+        return this.response.builder()
+        .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+        .contentType("application/json")
+        .body(new Gson().toJson(ERROR.getMessage()))
+        .build();
     }
   }
 
   public Response get() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response head() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response post() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response put() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response delete() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response connect() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response options() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response trace() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 
   public Response patch() {
-    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
+    return this.response.builder()
+    .status(StatusCodeEnum.METHOD_NOT_ALLOWED)
+    .contentType("application/json")
+    .body(new Gson().toJson(ERROR.getMessage()))
+    .build();
   }
 }
