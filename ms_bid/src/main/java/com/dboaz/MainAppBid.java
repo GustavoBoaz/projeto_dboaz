@@ -15,7 +15,7 @@ public class MainAppBid {
     private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
 
     public static void main(String[] args) {
-        LOGGER.info("| Bid [ env: {} ] |", ENVIROMENT);
+        LOGGER.info("[ Bid ENV: {} ]", ENVIROMENT);
         var server = DBoazApp.run(MainAppBid.class, args).server();
 
         server.start();

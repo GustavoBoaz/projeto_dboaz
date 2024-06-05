@@ -15,7 +15,7 @@ public class MainAppLogistic {
     private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
 
     public static void main(String[] args) {
-        LOGGER.info("| Logistic [ env: {} ] |", ENVIROMENT);
+        LOGGER.info("[ Logistic ENV: {} ]", ENVIROMENT);
         var server = DBoazApp.run(MainAppLogistic.class, args).server();
 
         server.start();

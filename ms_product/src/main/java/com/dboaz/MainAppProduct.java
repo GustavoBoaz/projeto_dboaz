@@ -15,7 +15,7 @@ public class MainAppProduct {
     private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
 
     public static void main(String[] args) {
-        LOGGER.info("| Product [ env: {} ] |", ENVIROMENT);
+        LOGGER.info("[ Product ENV: {} ]", ENVIROMENT);
         var server = DBoazApp.run(MainAppProduct.class, args).server();
 
         server.start();

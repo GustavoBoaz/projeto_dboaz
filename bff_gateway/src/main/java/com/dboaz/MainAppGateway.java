@@ -18,7 +18,7 @@ public class MainAppGateway {
   private static final String CHILD_ROUTE_MS_AUCTION = ApplicationProperties.main("child.route.ms_auction");
 
   public static void main(String[] args) {
-    LOGGER.info("| Gateway [ env: {} ] |", ENVIROMENT);
+    LOGGER.info("[ Gateway ENV: {} ]", ENVIROMENT);
     var server = DBoazApp.run(MainAppGateway.class, args).server();
 
     server.addRoute(BASE_ROUTE, CHILD_ROUTE_MS_AUCTION, DispachAuction.class);

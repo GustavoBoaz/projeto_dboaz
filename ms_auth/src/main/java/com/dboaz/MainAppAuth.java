@@ -15,7 +15,7 @@ public class MainAppAuth {
     private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
 
     public static void main(String[] args) {
-        LOGGER.info("| Auth [ env: {} ] |", ENVIROMENT);
+        LOGGER.info("[ Auth ENV: {} ]", ENVIROMENT);
         var server = DBoazApp.run(MainAppAuth.class, args).server();
 
         server.start();

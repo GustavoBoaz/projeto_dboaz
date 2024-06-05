@@ -15,7 +15,7 @@ public class MainAppAuction {
     private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
 
     public static void main(String[] args) {
-        LOGGER.info("| Auction [ env: {} ] |", ENVIROMENT);
+        LOGGER.info("[ Auction ENV: {} ]", ENVIROMENT);
         var server = DBoazApp.run(MainAppAuction.class, args).server();
 
         server.start();

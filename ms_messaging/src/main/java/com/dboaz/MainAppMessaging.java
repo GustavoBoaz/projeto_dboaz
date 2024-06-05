@@ -15,7 +15,7 @@ public class MainAppMessaging {
     private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
 
     public static void main(String[] args) {
-        LOGGER.info("| Messaging [ env: {} ] |", ENVIROMENT);
+        LOGGER.info("[ Messaging ENV: {} ]", ENVIROMENT);
         var server = DBoazApp.run(MainAppMessaging.class, args).server();
 
         server.start();
