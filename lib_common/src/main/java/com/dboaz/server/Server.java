@@ -26,12 +26,12 @@ public class Server extends AbstractServerUtil {
   
   public void start() {
     try (ServerSocket server = new ServerSocket(port)) {
-      LOGGER.info("| SERVER RUN PORT: {} |", port);
+      LOGGER.info("[ Server run PORT: {} ]", port);
       while (true) {
         new ClientConnection(server.accept(), this).start();
       }
     } catch (IOException e) {
-      LOGGER.error(new GenericException("Error [start server]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
+      LOGGER.error(new GenericException("[ Start server ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
     }
   }
 
@@ -46,7 +46,7 @@ public class Server extends AbstractServerUtil {
 
     @Override
     public void run() {
-      LOGGER.info("| {} | Client {} connected.", Thread.currentThread().getName(), client.getInetAddress().getHostAddress());    
+      LOGGER.info("[ {} | Client HOST {} connected ]", Thread.currentThread().getName(), client.getInetAddress().getHostAddress());    
 
       try (
         InputStream input = client.getInputStream();
@@ -64,13 +64,13 @@ public class Server extends AbstractServerUtil {
         result.send();
 
       } catch (IOException e) {
-        LOGGER.error(new GenericException("Error [Input or output straem]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
+        LOGGER.error(new GenericException("[ Input or output straem ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
       } finally {
         try {
-          LOGGER.info("| {} | Client {} disconnected.", Thread.currentThread().getName(), client.getInetAddress().getHostAddress());
+          LOGGER.info("[ {} | Client HOST {} disconnected ]", Thread.currentThread().getName(), client.getInetAddress().getHostAddress());
           client.close();
         } catch (IOException e) {
-          LOGGER.error(new GenericException("Error [close client connection]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
+          LOGGER.error(new GenericException("[ Close client connection ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
         }
       }
     }

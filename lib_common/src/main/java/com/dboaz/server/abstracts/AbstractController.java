@@ -2,9 +2,11 @@ package com.dboaz.server.abstracts;
 
 import com.dboaz.server.models.Request;
 import com.dboaz.server.models.Response;
+import com.dboaz.utils.enums.SeverityEnum;
+import com.dboaz.utils.errors.GenericException;
 
 public abstract class AbstractController {
-  private static final String METHOD_NOT_IMPLEMENTED = "Method not implemented.";
+  private static final String METHOD_NOT_IMPLEMENTED = "Method Not Allowed.";
   
   protected Request request;
   protected Response response;
@@ -33,43 +35,43 @@ public abstract class AbstractController {
       case "PATCH":
         return patch();
       default:
-        throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+        throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
     }
   }
 
   public Response get() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response head() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response post() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response put() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response delete() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response connect() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response options() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response trace() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 
   public Response patch() {
-    throw new UnsupportedOperationException(METHOD_NOT_IMPLEMENTED);
+    throw new GenericException("Error [ Method not Allowed ]: ".concat(METHOD_NOT_IMPLEMENTED), SeverityEnum.SEV_001, 405);
   }
 }

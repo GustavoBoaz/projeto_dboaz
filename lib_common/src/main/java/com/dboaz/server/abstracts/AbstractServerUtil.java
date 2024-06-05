@@ -50,7 +50,7 @@ public abstract class AbstractServerUtil {
         return response;
       }
     } catch (Exception e) {
-      throw new GenericException("Error [creating controller instance]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500);
+      throw new GenericException("[ Creating controller instance ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500);
     }
     return controller.execute(request, response);
   }
@@ -71,7 +71,7 @@ public abstract class AbstractServerUtil {
 
   private void addController(String route, Class<? extends AbstractController> controller) {
     if (existRouteController(route)) {
-      throw new GenericException("Error [add controller error]: Route already exists", SeverityEnum.SEV_001, 500);
+      throw new GenericException("Error [ Add controller error ]: Route already exists", SeverityEnum.SEV_001, 500);
     } else {
       this.controllers.put(route, controller);
     }
@@ -80,7 +80,7 @@ public abstract class AbstractServerUtil {
   private void addMiddleware(String route, MiddlewareImpl middleware) {
     if (existRouteMiddlewares(route)) {
       if (existMiddleware(route, middleware)) {
-        throw new GenericException("Error [add middleware error]: Middleware already exists", SeverityEnum.SEV_001, 500);
+        throw new GenericException("Error [ Add middleware error ]: Middleware already exists", SeverityEnum.SEV_001, 500);
       }
       middlewares.get(route).add(middleware);
     } else {

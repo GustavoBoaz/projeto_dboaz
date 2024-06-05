@@ -28,7 +28,7 @@ public class Response {
       this.out.flush();
       this.out.close();
     } catch (IOException e) {
-      //LOGGER.error(new GenericException("Error in close response", SeverityEnum.SEV_001, 500));
+      LOGGER.error(new GenericException("[ Close response ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
     }
   }
 
@@ -43,7 +43,7 @@ public class Response {
       try {
         this.out.write(("HTTP/1.1 " + status.getCode() + " " + status.getDescription() + "\n").getBytes());
       } catch (IOException e) {
-        LOGGER.error(new GenericException("Error in status", SeverityEnum.SEV_001, 500));
+        LOGGER.error(new GenericException("[ Poorly formatted status ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
       }
       return this;
     }
@@ -52,7 +52,7 @@ public class Response {
       try {
         this.out.write((key + ": " + value + "\n").getBytes());
       } catch (IOException e) {
-        LOGGER.error(new GenericException("Error in header", SeverityEnum.SEV_001, 500));
+        LOGGER.error(new GenericException("[ Poorly formatted header ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
       }
       return this;
     }
@@ -71,7 +71,7 @@ public class Response {
         this.out.write("\n".getBytes());
         this.out.write(body.getBytes());
       } catch (IOException e) {
-        LOGGER.error(new GenericException("Error in body", SeverityEnum.SEV_001, 500));
+        LOGGER.error(new GenericException("[ Poorly formatted body ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
       }
       return this;
     }
@@ -80,5 +80,4 @@ public class Response {
       return new Response(this.out);
     }
   }
-
 }

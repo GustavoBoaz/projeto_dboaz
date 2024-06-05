@@ -35,7 +35,7 @@ public class ApplicationProperties {
     try (InputStream input = ApplicationProperties.class.getResourceAsStream("/application.properties")) {
       prop.load(input);
     } catch (IOException error) {
-      LOGGER.error(new GenericException("Error: [read file in context main]".concat(error.getMessage()), SeverityEnum.SEV_001, 500));
+      LOGGER.error(new GenericException("[ Read file in context main ]: ".concat(error.getMessage()), SeverityEnum.SEV_001, 500));
     }
     return prop.getProperty(propertie);
   }
@@ -54,7 +54,7 @@ public class ApplicationProperties {
     try (InputStream input = ApplicationProperties.class.getResourceAsStream("/application-test.properties")) {
       prop.load(input);
     } catch (IOException error) {
-      LOGGER.error(new GenericException("Error: [read file in context test]".concat(error.getMessage()), SeverityEnum.SEV_001, 500));
+      LOGGER.error(new GenericException("[ Read file in context test ]: ".concat(error.getMessage()), SeverityEnum.SEV_001, 500));
     }
     return prop.getProperty(propertie);
   }

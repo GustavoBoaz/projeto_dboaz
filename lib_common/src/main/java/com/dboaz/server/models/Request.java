@@ -49,7 +49,7 @@ public class Request {
         }
       }
     } catch (IOException e) {
-      LOGGER.error(new GenericException("Error in convert inputstrem in string", SeverityEnum.SEV_001, 500));
+      LOGGER.error(new GenericException("[ Convert inputstrem in string ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
     }
     return request.toString();
   }
@@ -106,8 +106,7 @@ public class Request {
       }
 
     } catch (JsonSyntaxException e) {
-      e.printStackTrace();
-      LOGGER.error(new GenericException("Json format body error ", SeverityEnum.SEV_004, 400));
+      LOGGER.error(new GenericException("[ Json format body ]: ".concat(e.getMessage()), SeverityEnum.SEV_004, 400));
     }
   }
 }

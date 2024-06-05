@@ -47,7 +47,7 @@ public class DBoazApp {
 
     public Server server() {
         if (server == null) {
-            throw new GenericException("Error [ DBoazBootServer annotation is missing ]", SeverityEnum.SEV_001, 500);
+            throw new GenericException("Error [ DBoazBootServer annotation ]: Is missing", SeverityEnum.SEV_001, 500);
         }
         return server;
     }
@@ -55,15 +55,15 @@ public class DBoazApp {
     protected static void readInfoApp(Class<?> clazz, String[] args) {
         DBoazBootApp annotation = clazz.getAnnotation(DBoazBootApp.class);
         if (annotation != null) {
-            LOGGER.info("| RUN APP: {} | VERSION: {} | VERSION DATE: {} | RELEASE: {} |",  annotation.name(),  annotation.version(), annotation.date(), annotation.release());
+            LOGGER.info("[ Run APP: {} | Version: {} | Version DATE: {} | Release: {} ]",  annotation.name(),  annotation.version(), annotation.date(), annotation.release());
         } else {
-            throw new GenericException("Error [ DBoazBootApp annotation is missing ]", SeverityEnum.SEV_001, 500);
+            throw new GenericException("Error [ DBoazBootApp annotation ]:  is missing", SeverityEnum.SEV_001, 500);
         }
     }
 
     protected static Integer readInfoServer(Class<?> clazz, String[] args) {
         DBoazBootServer annotation = clazz.getAnnotation(DBoazBootServer.class);
-        LOGGER.info("| SERVER PORT: {} |",  annotation.port());
+        LOGGER.info("[ Server PORT: {} ]",  annotation.port());
         return Integer.parseInt(annotation.port());
     }
 
