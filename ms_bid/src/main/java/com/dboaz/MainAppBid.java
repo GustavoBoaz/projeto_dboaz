@@ -16,8 +16,8 @@ public class MainAppBid {
 
     public static void main(String[] args) {
         LOGGER.info("[ Bid ENV: {} ]", ENVIROMENT);
-        var server = DBoazApp.run(MainAppBid.class, args).server();
+        var app = DBoazApp.run(MainAppBid.class, args);
 
-        server.start();
+        app.server.start();
     }
 }

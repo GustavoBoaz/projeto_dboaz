@@ -16,8 +16,8 @@ public class MainAppProfile {
 
     public static void main(String[] args) {
         LOGGER.info("[ Profile ENV: {} ]", ENVIROMENT);
-        var server = DBoazApp.run(MainAppProfile.class, args).server();
+        var app = DBoazApp.run(MainAppProfile.class, args);
 
-        server.start();
+        app.server.start();
     }
 }

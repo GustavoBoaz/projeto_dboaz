@@ -16,8 +16,8 @@ public class MainAppCommentRating {
 
     public static void main(String[] args) {
         LOGGER.info("[ CommentRating ENV: {} ]", ENVIROMENT);
-        var server = DBoazApp.run(MainAppCommentRating.class, args).server();
+        var app = DBoazApp.run(MainAppCommentRating.class, args);
 
-        server.start();
+        app.server.start();
     }
 }

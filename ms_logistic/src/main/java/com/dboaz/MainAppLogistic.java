@@ -16,8 +16,8 @@ public class MainAppLogistic {
 
     public static void main(String[] args) {
         LOGGER.info("[ Logistic ENV: {} ]", ENVIROMENT);
-        var server = DBoazApp.run(MainAppLogistic.class, args).server();
+        var app = DBoazApp.run(MainAppLogistic.class, args);
 
-        server.start();
+        app.server.start();
     }
 }

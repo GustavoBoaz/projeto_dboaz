@@ -16,8 +16,8 @@ public class MainAppPayment {
 
     public static void main(String[] args) {
         LOGGER.info("[ Payment ENV: {} ]", ENVIROMENT);
-        var server = DBoazApp.run(MainAppPayment.class, args).server();
+        var app = DBoazApp.run(MainAppPayment.class, args);
 
-        server.start();
+        app.server.start();
     }
 }

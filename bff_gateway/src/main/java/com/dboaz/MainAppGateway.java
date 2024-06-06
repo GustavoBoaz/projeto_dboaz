@@ -19,10 +19,10 @@ public class MainAppGateway {
 
   public static void main(String[] args) {
     LOGGER.info("[ Gateway ENV: {} ]", ENVIROMENT);
-    var server = DBoazApp.run(MainAppGateway.class, args).server();
+    var app = DBoazApp.run(MainAppGateway.class, args);
 
-    server.addRoute(BASE_ROUTE, CHILD_ROUTE_MS_AUCTION, DispachAuction.class);
+    app.server.addRoute(BASE_ROUTE, CHILD_ROUTE_MS_AUCTION, DispachAuction.class);
 
-    server.start();
+    app.server.start();
   }
 }
