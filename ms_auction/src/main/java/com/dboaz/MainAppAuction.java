@@ -16,8 +16,8 @@ public class MainAppAuction {
 
     public static void main(String[] args) {
         LOGGER.info("[ Auction ENV: {} ]", ENVIROMENT);
-        var server = DBoazApp.run(MainAppAuction.class, args).server();
+        var app = DBoazApp.run(MainAppAuction.class, args);
 
-        server.start();
+        app.server.start();
     }
 }

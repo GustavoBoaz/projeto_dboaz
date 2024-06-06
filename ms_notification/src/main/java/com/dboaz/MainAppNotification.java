@@ -16,8 +16,8 @@ public class MainAppNotification {
 
     public static void main(String[] args) {
         LOGGER.info("[ Notification ENV: {} ]", ENVIROMENT);
-        var server = DBoazApp.run(MainAppNotification.class, args).server();
+        var app = DBoazApp.run(MainAppNotification.class, args);
 
-        server.start();
+        app.server.start();
     }
 }

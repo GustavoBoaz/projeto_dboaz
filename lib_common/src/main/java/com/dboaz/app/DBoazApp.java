@@ -14,7 +14,7 @@ import com.dboaz.utils.notations.DBoazBootServer;
 public class DBoazApp {
     private static final Logger LOGGER = LogManager.getLogger(DBoazApp.class);
 
-    private Server server;
+    public Server server;
 
     protected DBoazApp() {}
 
@@ -36,20 +36,17 @@ public class DBoazApp {
     }
     
     public static DBoazApp run(Class<?> clazz, String[] args) {
+        Builder builder = new Builder();
+
         readInfoApp(clazz, args);
 
         if(hasAnnotation(clazz, DBoazBootServer.class)) {
-            return new Builder().server(readInfoServer(clazz, args)).build();
+            builder.server(readInfoServer(clazz, args));
+        } else {
+            throw new GenericException("Error [ DBoazBootServer annotation ]: Is missing in main class", SeverityEnum.SEV_001, 500);
         }
 
-        return new DBoazApp();
-    }
-
-    public Server server() {
-        if (server == null) {
-            throw new GenericException("Error [ DBoazBootServer annotation ]: Is missing", SeverityEnum.SEV_001, 500);
-        }
-        return server;
+        return builder.build();
     }
 
     protected static void readInfoApp(Class<?> clazz, String[] args) {

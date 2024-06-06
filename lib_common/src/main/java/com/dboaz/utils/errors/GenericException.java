@@ -13,7 +13,7 @@ public class GenericException extends RuntimeException {
   }
 
   private static String concatMessage(String message, SeverityEnum severity, Integer statusResponse) {
-    return String.format("Error: [%s] Severity: [%s] Status: [%s]", message, severity.getSeverity(),
+    return String.format("Message: [%s] Severity: [%s] Status: [%s]", message, severity.getSeverity(),
         statusResponse.toString());
   }
 
