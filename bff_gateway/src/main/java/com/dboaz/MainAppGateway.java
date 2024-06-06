@@ -21,7 +21,7 @@ public class MainAppGateway {
     LOGGER.info("[ Gateway ENV: {} ]", ENVIROMENT);
     var app = DBoazApp.run(MainAppGateway.class, args);
 
-    app.server.addRoute(BASE_ROUTE, CHILD_ROUTE_MS_AUCTION, DispachAuction.class);
+    //app.server.addRoute(BASE_ROUTE, CHILD_ROUTE_MS_AUCTION, DispachAuction.class);
 
     app.server.start();
   }
