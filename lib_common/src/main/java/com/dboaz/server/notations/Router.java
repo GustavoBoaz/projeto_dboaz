@@ -1,4 +1,4 @@
-package com.dboaz.utils.notations;
+package com.dboaz.server.notations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,6 +8,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 public @interface Router {
-    String basePath() default "/";
+    String basePath();
     String nameApiDoc() default "";
 }

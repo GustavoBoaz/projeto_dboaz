@@ -1,4 +1,4 @@
-package com.dboaz.utils.notations;
+package com.dboaz.server.notations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.PARAMETER)
 public @interface ParamHeader {
-    boolean required() default true;
-    String name() default "";
+    boolean required();
+    String name();
     String nameApiDoc() default "";
 }

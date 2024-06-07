@@ -59,7 +59,7 @@ public class Server extends AbstractServerUtil {
         Response response = new Response(output);
 
         // process middlewares and controller
-        Response result = server.executeMiddlewares(request, response) ? server.executeController(request, response) : response;
+        Response result = server.executeRouter(request, response);
 
         result.send();
 

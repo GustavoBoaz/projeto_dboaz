@@ -14,14 +14,12 @@ import com.dboaz.utils.notations.DBoazBootServer;
 public class MainAppGateway {
   private static final Logger LOGGER = LogManager.getLogger(MainAppGateway.class);
   private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
-  private static final String BASE_ROUTE = ApplicationProperties.main("base.route.v1");
-  private static final String CHILD_ROUTE_MS_AUCTION = ApplicationProperties.main("child.route.ms_auction");
 
   public static void main(String[] args) {
     LOGGER.info("[ Gateway ENV: {} ]", ENVIROMENT);
     var app = DBoazApp.run(MainAppGateway.class, args);
 
-    //app.server.addRoute(BASE_ROUTE, CHILD_ROUTE_MS_AUCTION, DispachAuction.class);
+    app.server.addRoute(DispachAuction.class);
 
     app.server.start();
   }

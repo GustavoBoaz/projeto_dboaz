@@ -1,4 +1,4 @@
-package com.dboaz.utils.notations;
+package com.dboaz.server.notations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -9,6 +9,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.PARAMETER)
 public @interface ParamPath {
     boolean required() default true;
-    String name() default "";
+    String name();
     String nameApiDoc() default "";
 }

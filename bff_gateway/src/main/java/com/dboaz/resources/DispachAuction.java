@@ -3,12 +3,12 @@ package com.dboaz.resources;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.dboaz.utils.notations.ParamBody;
-import com.dboaz.utils.notations.ParamHeader;
-import com.dboaz.utils.notations.ParamPath;
-import com.dboaz.utils.notations.ParamQuery;
-import com.dboaz.utils.notations.Route;
-import com.dboaz.utils.notations.Router;
+import com.dboaz.server.notations.ParamBody;
+import com.dboaz.server.notations.ParamHeader;
+import com.dboaz.server.notations.ParamPath;
+import com.dboaz.server.notations.ParamQuery;
+import com.dboaz.server.notations.Route;
+import com.dboaz.server.notations.Router;
 
 @Router(basePath = "/bff/v1/gateway", nameApiDoc = "DispachAuction")
 public class DispachAuction {
@@ -16,8 +16,8 @@ public class DispachAuction {
 
     @Route(method = "GET", childPath = "/api/ms_auction", nameApiDoc = "Get Auctions")
     public Object getAuctions(
-        @ParamQuery(required = false, name = "page", nameApiDoc = "Pagination page") Integer page,
-        @ParamQuery(required = false, name = "size", nameApiDoc = "Pagination size") Integer size,
+        @ParamQuery(required = false, name = "page", nameApiDoc = "Pagination page") String page,
+        @ParamQuery(required = false, name = "size", nameApiDoc = "Pagination size") String size,
         @ParamHeader(required = true, name = "Authorization", nameApiDoc = "The athorization token") String authorization
     ) {
         LOGGER.info("Dispach Auction");
