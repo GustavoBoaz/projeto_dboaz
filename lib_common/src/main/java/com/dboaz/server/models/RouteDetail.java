@@ -5,14 +5,14 @@ import java.util.List;
 
 public class RouteDetail {
     private String name;
-    private String method;
+    private String verbMethod;
     private String childPath;
     private String fullPath;
     private List<ParamDetail> parametes;
 
-    public RouteDetail(String name, String method, String childPath, String fullPath) {
+    public RouteDetail(String name, String verbMethod, String childPath, String fullPath) {
         this.name = name;
-        this.method = method;
+        this.verbMethod = verbMethod;
         this.childPath = childPath;
         this.fullPath = fullPath;
         this.parametes = new ArrayList<>();
@@ -26,12 +26,12 @@ public class RouteDetail {
         this.name = name;
     }
 
-    public String getMethod() {
-        return method;
+    public String getVerbMethod() {
+        return verbMethod;
     }
 
-    public void setMethod(String method) {
-        this.method = method;
+    public void setVerbMethod(String verbMethod) {
+        this.verbMethod = verbMethod;
     }
 
     public String getChildPath() {

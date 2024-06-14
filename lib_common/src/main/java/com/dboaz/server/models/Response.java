@@ -2,6 +2,7 @@ package com.dboaz.server.models;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Map;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -44,6 +45,13 @@ public class Response {
         this.out.write(("HTTP/1.1 " + status.getCode() + " " + status.getDescription() + "\n").getBytes());
       } catch (IOException e) {
         LOGGER.error(new GenericException("[ Poorly formatted status ]: ".concat(e.getMessage()), SeverityEnum.SEV_001, 500));
+      }
+      return this;
+    }
+
+    public Builder headers(Map<String, String> headers) {
+      for (Map.Entry<String, String> entry : headers.entrySet()) {
+        header(entry.getKey(), entry.getValue());
       }
       return this;
     }

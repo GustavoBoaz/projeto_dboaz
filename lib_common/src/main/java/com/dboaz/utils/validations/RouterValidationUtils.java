@@ -42,4 +42,25 @@ public class RouterValidationUtils {
             }
         }
     }
+
+    public static void checkDuplicatedChildPath(String verbMethod, String childPath, RouterDetail router) {
+        router.getRoutes().forEach(route -> {
+            if (isEqualsChildPath(route.getChildPath(), childPath) && route.getVerbMethod().equals(verbMethod)) {
+                throw new GenericException("Error [ RouterReflection ]: Child path {} and method is duplicated".concat(childPath), SeverityEnum.SEV_001, 500);
+            }
+        });
+    }
+
+    public static Boolean isEqualsChildPath(String childPath1, String childPaht2) {
+        String path1 = removeBrackets(childPath1);
+        String path2 = removeBrackets(childPaht2);
+        if (path1 == path2) {
+            return true;
+        }
+        return false;
+    }
+
+    public static String removeBrackets(String path) {
+        return path.replaceAll("\\{[^}]*\\}", "");
+    }
 }

@@ -9,6 +9,7 @@ import com.dboaz.utils.validations.RouterValidationUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Parameter;
 import java.util.HashMap;
@@ -30,39 +31,64 @@ public class RouterReflection {
 
         LOGGER.info("[ RouterReflection | Register router: {} ]", clazz.getSimpleName());
         var router = new RouterDetail(clazz.getAnnotation(Router.class).basePath());
-        processMethods(clazz.getDeclaredMethods(), router);
         routers.put(clazz, router);
+        processMethods(clazz.getDeclaredMethods(), router);
     }
 
     public Response invokeMethod(Request request, Response response) {
         Map.Entry<Class<?>, RouterDetail> entrySet = getEntrySet(request.path);
         Class<?> router = entrySet.getKey();
-        RouterDetail routerDetail = entrySet.getValue();
+        var routerDetail = entrySet.getValue();
+        var routeDetail = routerDetail.searchRouteByVerbMethodAndFullPath(request.method, request.path);
+        String mainMethodName = routeDetail.getName();
 
-        Class[] argTypes = new Class[] { Object[].class };
-        String[] mainArgs;
-        String mainMethodName;
+        // parametros do metodo
+        if (!routeDetail.getParametes().isEmpty()) {
+            Class[] argTypes = new Class[routeDetail.getParametes().size()];
+            Object[] mainArgs = new Object[routeDetail.getParametes().size()];
+            for (int i = 0; i < routeDetail.getParametes().size(); i++) {
+                ParamDetail param = routeDetail.getParametes().get(i);
+                argTypes[i] = param.getType();
 
-        routerDetail.getRoutes().forEach(route -> {
+               if (param.getNotationType() == ParamQuery.class) {
+                mainArgs[i] = request.params.get(param.getName());
+               } else if (param.getNotationType() == ParamHeader.class) {
+                mainArgs[i] = request.headers.get(param.getName());
+               } else if (param.getNotationType() == ParamBody.class) {
+                mainArgs[i] = request.body;
+               }
+            }
 
-            // exemplo de request.path -> /api/users/43521 ou /api/users/43521/product
-            // exemplo de route.fullPath -> /api/users/{id} ou /api/users/{id}/product
+            // invocar metodo com parametros
+            try {
+                var inst = router.getDeclaredConstructor().newInstance();
+                var main = router.getDeclaredMethod(mainMethodName, argTypes);
+                var resp = (ResponseRoute) main.invoke(inst, mainArgs);
 
-            // para descobrir qual o método é necessario saber seus parametros (mainArgs)
-            // buscar método pelo seu fullPath
-
-            // encontrar os pametros
-            // buscar parametros @ParamPath pelo request.param
-            // buscar parametros @ParamQuery pelo request.query
-            // buscar parametros @ParamHeader pelo request.header
-            // buscar parametros @ParamBody pelo request.body
-        });
-
-        // invocar metodo
-        try {
-            Method main = router.getDeclaredMethod(mainMethodName, argTypes);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
+                return response.builder()
+                    .status(resp.getStatus())
+                    .contentType(resp.getContentType())
+                    .headers(resp.getHeaders())
+                    .body(resp.getBody())
+                    .build();
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException | IllegalArgumentException | SecurityException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            // invocar metodosem parametros
+            try {
+                var inst = router.getDeclaredConstructor().newInstance();
+                var main = router.getDeclaredMethod(mainMethodName);
+                var resp = (ResponseRoute) main.invoke(inst);
+                return response.builder()
+                    .status(resp.getStatus())
+                    .contentType(resp.getContentType())
+                    .headers(resp.getHeaders())
+                    .body(resp.getBody())
+                    .build();
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException | InstantiationException | IllegalArgumentException | SecurityException e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }
@@ -79,14 +105,19 @@ public class RouterReflection {
     protected void processMethods(Method[] methods, RouterDetail router) {
         for (Method method : methods) {
             if (method.isAnnotationPresent(Route.class)) {
+                String verbMethod = method.getAnnotation(Route.class).method();
+                String childPath = method.getAnnotation(Route.class).childPath();
+                
+                RouterValidationUtils.checkDuplicatedChildPath(verbMethod, childPath, router);
+                
                 var route = new RouteDetail(
                     method.getName(),
-                    method.getAnnotation(Route.class).method(),
-                    method.getAnnotation(Route.class).childPath(),
-                    router.getBasePath().concat(method.getAnnotation(Route.class).childPath())
+                    verbMethod,
+                    childPath,
+                    router.getBasePath().concat(childPath)
                 );
-                processParameters(method.getParameters(), route);
                 router.addRoute(route);
+                processParameters(method.getParameters(), route);
             }
         }
     }
@@ -95,38 +126,42 @@ public class RouterReflection {
         for (Parameter parameter : parameters) {
             if (parameter.isAnnotationPresent(ParamPath.class)) {
                 route.addParameter(
-                        new ParamDetail(
-                                parameter.getType(),
-                                parameter.getName(),
-                                parameter.getAnnotation(ParamPath.class).name(),
-                                parameter.getAnnotation(ParamPath.class).required()
-                        )
+                    new ParamDetail(
+                        ParamPath.class,
+                        parameter.getType(),
+                        parameter.getName(),
+                        parameter.getAnnotation(ParamPath.class).name(),
+                        parameter.getAnnotation(ParamPath.class).required()
+                    )
                 );
             } else if (parameter.isAnnotationPresent(ParamQuery.class)) {
                 route.addParameter(
-                        new ParamDetail(
-                                parameter.getType(),
-                                parameter.getName(),
-                                parameter.getAnnotation(ParamQuery.class).name(),
-                                parameter.getAnnotation(ParamQuery.class).required()
-                        )
+                    new ParamDetail(
+                        ParamQuery.class,
+                        parameter.getType(),
+                        parameter.getName(),
+                        parameter.getAnnotation(ParamQuery.class).name(),
+                        parameter.getAnnotation(ParamQuery.class).required()
+                    )
                 );
             } else if (parameter.isAnnotationPresent(ParamHeader.class)) {
                 route.addParameter(
-                        new ParamDetail(
-                                parameter.getType(),
-                                parameter.getName(),
-                                parameter.getAnnotation(ParamHeader.class).name(),
-                                parameter.getAnnotation(ParamHeader.class).required()
-                        )
+                    new ParamDetail(
+                        ParamHeader.class,
+                        parameter.getType(),
+                        parameter.getName(),
+                        parameter.getAnnotation(ParamHeader.class).name(),
+                        parameter.getAnnotation(ParamHeader.class).required()
+                    )
                 );
             } else if (parameter.isAnnotationPresent(ParamBody.class)) {
                 route.addParameter(
-                        new ParamDetail(
-                                parameter.getType(),
-                                parameter.getName(),
-                                parameter.getAnnotation(ParamBody.class).required()
-                        )
+                    new ParamDetail(
+                        ParamBody.class,
+                        parameter.getType(),
+                        parameter.getName(),
+                        parameter.getAnnotation(ParamBody.class).required()
+                    )
                 );
             }
         }
