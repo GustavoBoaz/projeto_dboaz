@@ -1,0 +1,5 @@
+# Profile "dev"
+---
+logging:
+  level:
+    com.dboaz: "TRACE"

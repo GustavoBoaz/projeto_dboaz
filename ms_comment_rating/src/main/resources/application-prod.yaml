@@ -1,0 +1,5 @@
+# Profile "prod"
+---
+logging:
+  level:
+    com.dboaz: "ERROR"
