@@ -8,7 +8,7 @@ if [ -d "$JAR_FILE" ]; then
     mvn clean package -Dmaven.test.skip=true
 
     # Executa o comando 'java -jar' para iniciar o módulo
-    java -jar "$JAR_FILE"/target/*.jar
+    java -jar -Dspring.profiles.active=prod "$JAR_FILE"/target/*.jar
 else
     echo "Modulo '"$JAR_FILE"' não existe neste diretório."
 fi

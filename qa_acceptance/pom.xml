@@ -21,57 +21,7 @@
 		</dependency>
 
 		<!-- External dependencies -->
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-java</artifactId>
-			<version>7.15.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit-platform-engine</artifactId>
-				<version>7.15.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-suite</artifactId>
-				<version>1.10.0</version>
-			<scope>test</scope>
-		</dependency>
 
 	</dependencies>
-
-	<build>
-		<plugins>
-
-			<!-- Plugin Maven surefire for test -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
-				<configuration>
-					<includes>
-						<include>**/*Test.java</include>
-					</includes>
-				</configuration>
-			</plugin>
-		
-			<!-- Plugin disable notation process -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.11.0</version>
-				<configuration>
-					<compilerArgs>
-						<arg>-proc:none</arg>
-					</compilerArgs>
-				</configuration>
-			</plugin>
-
-		</plugins>
-	</build>
 
 </project>
