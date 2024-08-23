@@ -26,6 +26,66 @@
             <version>1.0.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_auction</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_auth</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_bid</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_comment_rating</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_logistic</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_messaging</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_notification</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_payment</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_product</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
+            <artifactId>ms_profile</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
 		<!-- External dependencies -->
 
 	</dependencies>
