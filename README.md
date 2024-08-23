@@ -60,6 +60,50 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 
 </details><br>
 
+## base_core/
+
+👨‍💻The base code core system.
+
+<details>
+    <summary>🛠 Details</summary>
+    <h3>Tree</h3>
+
+  ```tree
+  .
+  ├── src/
+      ├── main/
+      |   ├── java/
+      |   |   └── com/
+      |   |       └── dboaz/
+      |   |           ├── ms_auction/
+      |   |           ├── ms_auth/
+      |   |           ├── ms_bid/
+      |   |           ├── ms_comment_rating/
+      |   |           ├── ms_logistic/
+      |   |           ├── ms_messaging/
+      |   |           ├── ms_notification/
+      |   |           ├── ms_payment/
+      |   |           ├── ms_product/
+      |   |           ├── ms_profile/
+      |   |           └── utils/
+      |   └── resources/
+      |── test/
+      |   ├── java/
+      |   |   └── com/
+      |   |       └── dboaz/
+      |   |           ├── integration/
+      |   |           └── unit/
+      |   └── resources/
+      └── pom.xml
+  ```
+
+### Version
+| Number  | Descrição                        |
+| :------ | :--------------------------------|
+| `00.01` | **Description**: initial version |
+
+</details><br>
+
 ## bff_gateway/
 👨‍💻It facilitates communication between different applications through application programming interfaces (APIs).
 <details>
