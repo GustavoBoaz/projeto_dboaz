@@ -42,53 +42,21 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
       |   ├── java/
       |   |   └── com/
       |   |       └── dboaz/
-      |   |           ├── app/
-      |   |           ├── properties/
-      |   |           ├── server/
-      |   |           └── utils/
       |   └── resources/
-      └── test/
-          ├── java/
-          |   └── com/
-          |       └── dboaz/
-          |           ├── integration/
-          |           └── unit/
-          └── resources/
+      |── test/
+      |   ├── java/
+      |   |   └── com/
+      |   |       └── dboaz/
+      |   |           ├── integration/
+      |   |           └── unit/
+      |   └── resources/
+      └── pom.xml
   ```
 
-### Features
-#### Feature `properties/` :
-- This feature provide two methods for get properties in folder resources in archive `application.properties` and `application-test.properties`
-##### Diagram
-![ApplicationProperties](https://i.imgur.com/F1PSrzj.png)
-##### Usage:
-- `main/resources/application.properties` or `test/resources/application-test.properties`
-```properties
-enviroment: DEV
-route.v1: /api/v1/app
-```
-- `main/java/com/project/MainApp.java`
-```java
-package com.project;
-
-import com.dboaz.properties.ApplicationProperties;
-
-public class MainApp {
-  private static final String ENVIROMENT = ApplicationProperties.main("enviroment");
-  private static final String ROUTE_V1 = ApplicationProperties.main("route.v1");
-
-  public static void main(String[] args) {
-    System.out.println(ENVIROMENT);
-    System.out.println(ROUTE_V1);
-  }
-}
-```
-
-
 ### Version
-| Number  | Descrição                                   |
-| :------ | :------------------------------------------ |
-| `00.01` | **Description**: initial version            |
+| Number  | Descrição                                                                         |
+| :------ | :-------------------------------------------------------------------------------- |
+| `00.01` | **Description**: include global libs - spring boot starter web, test and cucumber |
 
 </details><br>
 
