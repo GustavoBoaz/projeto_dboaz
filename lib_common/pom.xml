@@ -37,6 +37,13 @@
             <version>${spring.boot-version}</version>
         </dependency>
 
+        <!-- Spring boot starter actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot-version}</version>
+        </dependency>
+
         <!-- Cucumber for BDD test | cucumber: java - junit - spring -->
         <dependency>
             <groupId>io.cucumber</groupId>
