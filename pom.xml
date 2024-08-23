@@ -13,10 +13,12 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.release>21</maven.compiler.release>
     </properties>
-    
+
     <modules>
         <!-- Add modules -->
         <module>lib_common</module>
+
+        <module>base_core</module>
 
         <module>bff_gateway</module>
 
@@ -30,7 +32,7 @@
         <module>ms_payment</module>
         <module>ms_product</module>
         <module>ms_profile</module>
-        
+
         <module>qa_acceptance</module>
     </modules>
 

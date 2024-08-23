@@ -22,6 +22,12 @@
 
         <dependency>
             <groupId>com.dboaz</groupId>
+            <artifactId>base_core</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dboaz</groupId>
             <artifactId>bff_gateway</artifactId>
             <version>1.0.0</version>
         </dependency>
