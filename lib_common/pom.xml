@@ -16,6 +16,7 @@
 
     <properties>
         <spring.boot-version>3.3.2</spring.boot-version>
+        <cucumber-version>7.14.0</cucumber-version>
     </properties>
 
     <dependencies>
@@ -34,6 +35,25 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${spring.boot-version}</version>
+        </dependency>
+
+        <!-- Cucumber for BDD test | cucumber: java - junit - spring -->
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${cucumber-version}</version>
         </dependency>
 
     </dependencies>
