@@ -9,7 +9,7 @@ on:
       - main_spring
 
 jobs:
-  build_lib_common:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -27,126 +27,27 @@ jobs:
       - name: Verify Maven version
         run: mvn --version
 
-      - name: Install lib_common module in local repository
-        run: mvn -pl lib_common clean install package
-        
-      - name: Upload lib_common artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: lib_common
-          path: |
-            lib_common/target/*.jar
-            lib_common/target/*.pom
+      - name: Install lib_common module
+        run: mvn -pl lib_common clean install
 
-  build_base_core:
-    runs-on: ubuntu-latest
-    needs: build_lib_common
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-
-      - name: Set up JDK 21
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Install Maven 3.6.3
-        run: sudo apt-get install -y maven
-
-      - name: Verify Maven version
-        run: mvn --version
-
-      - name: Download lib_common artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: lib_common
-          path: .m2/repository/com/dboaz/lib_common/1.0.0-SNAPSHOT/
-
-      - name: Build base_core module
-        run: mvn -pl base_core clean package
-
-  build_bff_gateway:
-    runs-on: ubuntu-latest
-    needs: build_lib_common
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-
-      - name: Set up JDK 21
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Install Maven 3.6.3
-        run: sudo apt-get install -y maven
-
-      - name: Verify Maven version
-        run: mvn --version
-
-      - name: Download lib_common artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: lib_common
-          path: .m2/repository/com/dboaz/lib_common/1.0.0-SNAPSHOT/
+      - name: Install base_core module
+        run: mvn -pl base_core clean install
 
       - name: Build bff_gateway module
         run: mvn -pl bff_gateway clean package
 
-  build_microservices:
-    runs-on: ubuntu-latest
-    needs: build_lib_common
-    strategy:
-      matrix:
-        service:
-          - ms_auction
-          - ms_auth
-          - ms_bid
-          - ms_comment_rating
-          - ms_logistic
-          - ms_messaging
-          - ms_notification
-          - ms_payment
-          - ms_product
-          - ms_profile
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-
-      - name: Set up JDK 21
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Install Maven 3.6.3
-        run: sudo apt-get install -y maven
-
-      - name: Verify Maven version
-        run: mvn --version
-
-      - name: Build ${{ matrix.service }} module
-        run: mvn -pl ${{ matrix.service }} clean package
-
-  build_qa_acceptance:
-    runs-on: ubuntu-latest
-    needs: build_lib_common
-    steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
-
-      - name: Set up JDK 21
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Install Maven 3.6.3
-        run: sudo apt-get install -y maven
-
-      - name: Verify Maven version
-        run: mvn --version
+      - name: Build microservices modules
+        run: |
+          mvn -pl ms_auction clean package
+          mvn -pl ms_auth clean package
+          mvn -pl ms_bid clean package
+          mvn -pl ms_comment_rating clean package
+          mvn -pl ms_logistic clean package
+          mvn -pl ms_messaging clean package
+          mvn -pl ms_notification clean package
+          mvn -pl ms_payment clean package
+          mvn -pl ms_product clean package
+          mvn -pl ms_profile clean package
 
       - name: Build qa_acceptance module
         run: mvn -pl qa_acceptance clean package
