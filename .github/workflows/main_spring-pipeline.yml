@@ -1,4 +1,4 @@
-name: Java Modular Build
+name: Modular_Build
 
 on:
   push:
@@ -23,9 +23,6 @@ jobs:
 
       - name: Install Maven 3.6.3
         run: sudo apt-get install -y maven
-
-      - name: Verify Maven version
-        run: mvn --version
 
       - name: Build All Modules
         run: mvn clean package
