@@ -27,27 +27,5 @@ jobs:
       - name: Verify Maven version
         run: mvn --version
 
-      - name: Install lib_common module
-        run: mvn -pl lib_common clean install
-
-      - name: Install base_core module
-        run: mvn -pl base_core clean install
-
-      - name: Build bff_gateway module
-        run: mvn -pl bff_gateway clean package
-
-      - name: Build microservices modules
-        run: |
-          mvn -pl ms_auction clean package
-          mvn -pl ms_auth clean package
-          mvn -pl ms_bid clean package
-          mvn -pl ms_comment_rating clean package
-          mvn -pl ms_logistic clean package
-          mvn -pl ms_messaging clean package
-          mvn -pl ms_notification clean package
-          mvn -pl ms_payment clean package
-          mvn -pl ms_product clean package
-          mvn -pl ms_profile clean package
-
-      - name: Build qa_acceptance module
-        run: mvn -pl qa_acceptance clean package
+      - name: Build All Modules
+        run: mvn clean package
