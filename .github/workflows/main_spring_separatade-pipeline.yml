@@ -39,14 +39,14 @@ jobs:
 
       - name: Install core project with Maven
         run: |
-          mvn -B install --file pom.xml
+          mvn -B install -DskipTests --file pom.xml
 
       - name: Build base_core module
         run: mvn -pl base_core clean package
 
   build_bff_gateway:
     runs-on: ubuntu-latest
-    needs: build_microservices
+    needs: build_base_core
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -59,7 +59,7 @@ jobs:
 
       - name: Install core project with Maven
         run: |
-          mvn -B install --file pom.xml
+          mvn -B install -DskipTests --file pom.xml
 
       - name: Build bff_gateway module
         run: mvn -pl bff_gateway clean package
@@ -92,14 +92,14 @@ jobs:
 
       - name: Install core project with Maven
         run: |
-          mvn -B install --file pom.xml
+          mvn -B install -DskipTests --file pom.xml
 
       - name: Build ${{ matrix.service }} module
         run: mvn -pl ${{ matrix.service }} clean package
 
   build_qa_acceptance:
     runs-on: ubuntu-latest
-    needs: build_bff_gateway
+    needs: build_microservices
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -112,7 +112,7 @@ jobs:
 
       - name: Install core project with Maven
         run: |
-          mvn -B install --file pom.xml
+          mvn -B install -DskipTests --file pom.xml
 
       - name: Build qa_acceptance module
-        run: mvn -pl qa_acceptance clean package
+        run: mvn -pl qa_acceptance clean verify
