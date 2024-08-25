@@ -1,4 +1,4 @@
-name: Modular_Build
+name: maven
 
 on:
   push:
