@@ -1,4 +1,4 @@
-name: maven
+name: Build all modules Maven
 
 on:
   push:
