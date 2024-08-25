@@ -1,5 +1,7 @@
 # dboaz-project
 
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/GustavoBoaz/projeto_dboaz/main_spring-pipeline.yml)
+
 The "dboaz-project" is a comprehensive online auction system designed to facilitate the buying and selling of a variety of products in a secure and efficient virtual environment. Below is a detailed description of the main components of the project:
 
 ### Author
