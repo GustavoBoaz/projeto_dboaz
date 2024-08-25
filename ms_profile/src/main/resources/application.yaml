@@ -1,1 +1,5 @@
-spring:
+microservice:
+  ms_profile:
+    name: ms_profile
+    version: v1
+    description: Stores and manages user-specific information such as contact details and preferences

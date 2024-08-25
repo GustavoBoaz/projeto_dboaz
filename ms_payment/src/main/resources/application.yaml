@@ -1,1 +1,5 @@
-spring:
+microservice:
+  ms_payment:
+    name: ms_payment
+    version: v1
+    description: Handles transactions payments upon successful completion of an auction

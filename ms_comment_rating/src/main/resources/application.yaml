@@ -1,1 +1,5 @@
-spring:
+microservice:
+  ms_comment_rating:
+    name: ms_comment_rating
+    version: v1
+    description: Handles comments and ratings functionality for buyers and sellers

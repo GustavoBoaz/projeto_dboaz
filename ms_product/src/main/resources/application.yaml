@@ -1,1 +1,5 @@
-spring:
+microservice:
+  ms_product:
+    name: ms_product
+    version: v1
+    description: Stores information about the products being auctioned, including descriptions, images, and specific details
