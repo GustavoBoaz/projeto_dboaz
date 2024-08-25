@@ -28,7 +28,15 @@ jobs:
         run: mvn --version
 
       - name: Install lib_common module in local repository
-        run: mvn -pl lib_common clean install
+        run: mvn -pl lib_common clean install package
+        
+      - name: Upload lib_common artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: lib_common
+          path: |
+            lib_common/target/*.jar
+            lib_common/target/*.pom
 
   build_base_core:
     runs-on: ubuntu-latest
@@ -48,6 +56,12 @@ jobs:
 
       - name: Verify Maven version
         run: mvn --version
+
+      - name: Download lib_common artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: lib_common
+          path: .m2/repository/com/dboaz/lib_common/1.0.0-SNAPSHOT/
 
       - name: Build base_core module
         run: mvn -pl base_core clean package
@@ -70,6 +84,12 @@ jobs:
 
       - name: Verify Maven version
         run: mvn --version
+
+      - name: Download lib_common artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: lib_common
+          path: .m2/repository/com/dboaz/lib_common/1.0.0-SNAPSHOT/
 
       - name: Build bff_gateway module
         run: mvn -pl bff_gateway clean package
