@@ -1,4 +1,4 @@
-name: Java Separatade Build
+name: Pipeline dboaz
 
 on:
   push:
