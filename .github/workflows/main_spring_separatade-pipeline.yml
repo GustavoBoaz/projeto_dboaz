@@ -26,6 +26,7 @@ jobs:
 
   build_base_core:
     runs-on: ubuntu-latest
+    needs: build_lib_common
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -45,6 +46,7 @@ jobs:
 
   build_bff_gateway:
     runs-on: ubuntu-latest
+    needs: build_microservices
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -64,6 +66,7 @@ jobs:
 
   build_microservices:
     runs-on: ubuntu-latest
+    needs: build_base_core
     strategy:
       matrix:
         service:
@@ -96,6 +99,7 @@ jobs:
 
   build_qa_acceptance:
     runs-on: ubuntu-latest
+    needs: build_bff_gateway
     steps:
       - name: Checkout source code
         uses: actions/checkout@v3
