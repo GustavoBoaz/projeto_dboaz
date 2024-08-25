@@ -499,7 +499,11 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 ### Features
 #### Feature `Global info`:
 - This feature is request for new resource in all microservise.
-- Create feature in `resources/features/global_info.feature`
+- Owner QA Test - Create feature gherkin in `resources/features/global_info.feature`.
+- Owner QA Automation - Create model GlobalInfo in `base_core` module in folder `dboaz/utils/modules`.
+- Owner QA Automation - Create steps in `steps/GlobalInfoStep.java`
+- Owner DEV Back end - Implements feature in all microservices.
+##### Gherkin
 ```gherkin
 Feature: Verify /info endpoint in all microservices
 
