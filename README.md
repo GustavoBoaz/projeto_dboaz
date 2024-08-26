@@ -124,7 +124,50 @@ Feature: Verify /info endpoint in all microservices
       | ms_product        | /ms_product/info        | v1      | Stores information about the products being auctioned, including descriptions, images, and specific details |
       | ms_profile        | /ms_profile/info        | v1      | Stores and manages user-specific information such as contact details and preferences                        |
 ```
-</details>
+</details><br>
+
+#### Feature `Global OpenApi`:
+<details>
+  <summary>🛠 View</summary>
+
+**This feature provide documentation OpenApi in all microservise.**
+- Owner QA Mid level or Senior - Create feature in readme `qa_acceptance`.
+- Owner QA Junior or Mid level - Create feature gherkin in `resources/features/global_openapi.feature`.
+- Owner QA Mid level or Senior - Create steps in `steps/GlobalOpenApiStep.java`
+- Owner DEV Mid level or Senior - Implements feature in all microservices.
+- Owner QA Senior - Validate manual tests.
+
+**Util:**
+- [OpenApi - Springdoc](https://springdoc.org/)
+- [Bealdung](https://www.baeldung.com/spring-rest-openapi-documentation)
+
+##### Gherkin
+```gherkin
+Feature: Verify /doc/apis.html endpoint in all microservices
+
+  As a developer
+  I want to ensure that all microservices have a /doc/apis.html endpoint
+  So that I can retrieve essential API resources
+
+  Scenario Outline: Validate response from /doc/apis.html endpoint of <service_name> microservice
+    Given the "<service_name>" microservice is running
+    When make a GET request to "<path>"
+    Then the response should have an HTTP status 200
+
+    Examples:
+      | service_name      | path                              |
+      | ms_auction        | /ms_auction/doc/apis.html         |
+      | ms_auth           | /ms_auth/doc/apis.html            |
+      | ms_bid            | /ms_bid/doc/apis.html             |
+      | ms_comment_rating | /ms_comment_rating/doc /apis.html |
+      | ms_logistic       | /ms_logistic/doc/apis.html        |
+      | ms_messaging      | /ms_messaging/doc/apis.html       |
+      | ms_notification   | /ms_notification/doc/apis.html    |
+      | ms_payment        | /ms_payment/doc/apis.html         |
+      | ms_product        | /ms_product/doc/apis.html         |
+      | ms_profile        | /ms_profile/doc/apis.html         |
+```
+</details><br>
 
 ### Version
 
