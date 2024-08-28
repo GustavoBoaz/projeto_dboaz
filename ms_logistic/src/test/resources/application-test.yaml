@@ -1,2 +1,5 @@
-enviroment: TEST
-app.name: ms_logistic
+microservice:
+  ms_logistic:
+    name: ms_logistic
+    version: v1
+    description: Manages delivery and logistics information for auctioned products

@@ -18,9 +18,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 
 @Tag(name = "Info")
 @RestController
-public class InfoCommentRationgController {
+public class InfoCommentRatingController {
 
-    private static final Logger LOG = LoggerFactory.getLogger(InfoCommentRationgController.class);
+    private static final Logger LOG = LoggerFactory.getLogger(InfoCommentRatingController.class);
 
     @Value("${microservice.ms_comment_rating.name}") String name;
     @Value("${microservice.ms_comment_rating.version}") String version;
