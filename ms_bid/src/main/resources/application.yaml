@@ -3,3 +3,16 @@ microservice:
     name: ms_bid
     version: v1
     description: Manages bidding logic during auctions, including tracking user bids
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+
+springdoc:
+  swagger-ui:
+    path: /docs/swagger
+  api-docs:
+    path: /docs/openapi

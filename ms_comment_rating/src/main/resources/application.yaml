@@ -3,3 +3,16 @@ microservice:
     name: ms_comment_rating
     version: v1
     description: Handles comments and ratings functionality for buyers and sellers
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+
+springdoc:
+  swagger-ui:
+    path: /docs/swagger
+  api-docs:
+    path: /docs/openapi

@@ -3,3 +3,16 @@ microservice:
     name: ms_auction
     version: v1
     description: Responsible for managing auctions, including creation, closing and listing
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+
+springdoc:
+  swagger-ui:
+    path: /docs/swagger
+  api-docs:
+    path: /docs/openapi
