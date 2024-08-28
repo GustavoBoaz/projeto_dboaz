@@ -1,4 +1,4 @@
-package com.dboaz.steps;
+package com.dboaz.steps.global_ms;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
