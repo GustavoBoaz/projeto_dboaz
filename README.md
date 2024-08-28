@@ -126,14 +126,14 @@ Feature: Verify /info endpoint in all microservices
 ```
 </details><br>
 
-#### Feature F2# `Global OpenApi`:
+#### Feature F2# `Global SpringDoc`:
 <details>
   <summary>🛠 View</summary>
 
 **This feature provide documentation OpenApi in all microservise.**
 - Owner QA Mid level or Senior - Create feature in readme `qa_acceptance`.
-- Owner QA Junior or Mid level - Create feature gherkin in `resources/features/global_openapi.feature`.
-- Owner QA Mid level or Senior - Create steps in `steps/GlobalOpenApiStep.java`
+- Owner QA Junior or Mid level - Create feature gherkin in `resources/features/global_springdoc.feature`.
+- Owner QA Mid level or Senior - Create steps in `steps/GlobalSpringDocStep.java`
 - Owner DEV Mid level or Senior - Implements feature in all microservices.
 - Owner QA Senior - Validate manual tests.
 
@@ -143,29 +143,49 @@ Feature: Verify /info endpoint in all microservices
 
 ##### Gherkin
 ```gherkin
-Feature: Verify /doc/apis.html endpoint in all microservices
+Feature: Verify /docs/openapi and /docs/swagger endpoint in all microservices
 
   As a developer
-  I want to ensure that all microservices have a /doc/apis.html endpoint
+  I want to ensure that all microservices have a /docs/openapi and /docs/swagger endpoint
   So that I can retrieve essential API resources
 
-  Scenario Outline: Validate response from /doc/apis.html endpoint of <service_name> microservice
+  Scenario Outline: Validate response from /docs/openapi/ endpoint of <service_name> microservice
     Given `F2#` - the "<service_name>" microservice is running
-    When `F2#` - make a GET request to "<path>"
+    When `F2#` - make a GET request to "/docs/openapi"
     Then `F2#` - the response should have an HTTP status 200
+    And `F2#` - the content-type equals application/json
 
     Examples:
-      | service_name      | path                             |
-      | ms_auction        | /ms_auction/doc/apis.html        |
-      | ms_auth           | /ms_auth/doc/apis.html           |
-      | ms_bid            | /ms_bid/doc/apis.html            |
-      | ms_comment_rating | /ms_comment_rating/doc/apis.html |
-      | ms_logistic       | /ms_logistic/doc/apis.html       |
-      | ms_messaging      | /ms_messaging/doc/apis.html      |
-      | ms_notification   | /ms_notification/doc/apis.html   |
-      | ms_payment        | /ms_payment/doc/apis.html        |
-      | ms_product        | /ms_product/doc/apis.html        |
-      | ms_profile        | /ms_profile/doc/apis.html        |
+      | service_name      |
+      | ms_auction        |
+      | ms_auth           |
+      | ms_bid            |
+      | ms_comment_rating |
+      | ms_logistic       |
+      | ms_messaging      |
+      | ms_notification   |
+      | ms_payment        |
+      | ms_product        |
+      | ms_profile        |
+
+  Scenario Outline: Validate response from /docs/swagger/ endpoint of <service_name> microservice
+    Given `F2#` - the "<service_name>" microservice is running
+    When `F2#` - make a GET request to "/docs/swagger"
+    Then `F2#` - the response should have an HTTP status 200
+    And `F2#` - the content-type equals text/html
+
+    Examples:
+      | service_name      |
+      | ms_auction        |
+      | ms_auth           |
+      | ms_bid            |
+      | ms_comment_rating |
+      | ms_logistic       |
+      | ms_messaging      |
+      | ms_notification   |
+      | ms_payment        |
+      | ms_product        |
+      | ms_profile        |
 ```
 </details><br>
 
