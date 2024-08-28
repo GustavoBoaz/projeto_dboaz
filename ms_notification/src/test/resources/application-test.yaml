@@ -1,1 +1,5 @@
-enviroment: TEST
+microservice:
+  ms_notification:
+    name: ms_notification
+    version: v1
+    description: Responsible for sending notifications, such as reminders of upcoming auctions, unread chat messages

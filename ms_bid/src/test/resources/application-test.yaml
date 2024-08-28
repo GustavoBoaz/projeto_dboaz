@@ -1,1 +1,5 @@
-enviroment: TEST
+microservice:
+  ms_bid:
+    name: ms_bid
+    version: v1
+    description: Manages bidding logic during auctions, including tracking user bids
