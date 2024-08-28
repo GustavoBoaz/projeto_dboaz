@@ -1,2 +1,5 @@
-enviroment: TEST
-app.name: ms_auth
+microservice:
+  ms_auth:
+    name: ms_auth
+    version: v1
+    description: Responsible for user management, authentication and authorization

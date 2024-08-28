@@ -5,10 +5,10 @@ Feature: Verify /info endpoint in all microservices
   So that I can retrieve essential API information like version, name, and description
 
   Scenario Outline: Validate response from /info endpoint of <service_name> microservice
-    Given the "<service_name>" microservice is running
-    When make a GET request to "<path>"
-    Then the response should have an HTTP status 200
-    And the response body should contain the following fields with expected values:
+    Given `F1#` - the "<service_name>" microservice is running
+    When `F1#` - make a GET request to "<path>"
+    Then `F1#` - the response should have an HTTP status 200
+    And `F1#` - the response body should contain the following fields with expected values:
       | field       | expected_value |
       | name        | <service_name> |
       | version     | <version>      |

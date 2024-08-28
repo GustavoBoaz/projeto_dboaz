@@ -1,0 +1,117 @@
+microservice:
+  ms_auction:
+    name: ms_auction
+    version: v1
+    description: Responsible for managing auctions, including creation, closing and listing
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_auth:
+    name: ms_auth
+    version: v1
+    description: Responsible for user management, authentication and authorization
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_bid:
+    name: ms_bid
+    version: v1
+    description: Manages bidding logic during auctions, including tracking user bids
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_comment_rating:
+    name: ms_comment_rating
+    version: v1
+    description: Handles comments and ratings functionality for buyers and sellers
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_logistic:
+    name: ms_logistic
+    version: v1
+    description: Manages delivery and logistics information for auctioned products
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_messaging:
+    name: ms_messaging
+    version: v1
+    description: Provides messaging functionality for communication between users during auctions
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_notification:
+    name: ms_notification
+    version: v1
+    description: Responsible for sending notifications, such as reminders of upcoming auctions, unread chat messages
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_payment:
+    name: ms_payment
+    version: v1
+    description: Handles transactions payments upon successful completion of an auction
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_product:
+    name: ms_product
+    version: v1
+    description: Stores information about the products being auctioned, including descriptions, images, and specific details
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+  ms_profile:
+    name: ms_profile
+    version: v1
+    description: Stores and manages user-specific information such as contact details and preferences
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+
+springdoc:
+  swagger-ui:
+    path: /docs/swagger
+  api-docs:
+    path: /docs/openapi

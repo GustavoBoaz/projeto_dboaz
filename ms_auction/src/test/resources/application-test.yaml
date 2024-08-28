@@ -1,1 +1,5 @@
-enviroment: TEST
+microservice:
+  ms_auction:
+    name: ms_auction
+    version: v1
+    description: Responsible for managing auctions, including creation, closing and listing

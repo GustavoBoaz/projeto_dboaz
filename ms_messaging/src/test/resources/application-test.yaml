@@ -1,2 +1,5 @@
-enviroment: TEST
-app.name: ms_messaging
+microservice:
+  ms_messaging:
+    name: ms_messaging
+    version: v1
+    description: Provides messaging functionality for communication between users during auctions

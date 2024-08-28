@@ -1,4 +1,4 @@
-package com.dboaz.steps;
+package com.dboaz.steps.global_ms;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -24,23 +24,23 @@ public class GlobalInfoStep extends SpringAcceptanceTest {
 
     ResponseEntity<Object> response;
 
-    @Given("the {string} microservice is running")
+    @Given("`F1#` - the {string} microservice is running")
     public void the_microservice_is_running(String serviceName) {
         assertNotNull(getClassMap(serviceName), "Microservice name is not registred");
         assertTrue(context.getBeanNamesForType(getClassMap(serviceName)).length > 0, "Microservice is not enable in context");
     }
 
-    @When("make a GET request to {string}")
+    @When("`F1#` - make a GET request to {string}")
     public void make_a_get_request_to(String path) {
         response = rest.getForEntity(path, Object.class);
     }
 
-    @Then("the response should have an HTTP status {int}")
+    @Then("`F1#` - the response should have an HTTP status {int}")
     public void the_response_should_have_an_http_status(Integer status) {
         assertTrue(response.getStatusCode().is2xxSuccessful(), "The status code are not range 200");
     }
 
-    @Then("the response body should contain the following fields with expected values:")
+    @Then("`F1#` - the response body should contain the following fields with expected values:")
     public void the_response_body_should_contain_the_following_fields_with_expected_values(DataTable dataTable) {
 
         @SuppressWarnings("unchecked")

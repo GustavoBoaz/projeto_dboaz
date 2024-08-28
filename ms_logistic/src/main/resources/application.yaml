@@ -3,3 +3,16 @@ microservice:
     name: ms_logistic
     version: v1
     description: Manages delivery and logistics information for auctioned products
+    routes:
+      info:
+        title: Info API
+        version: 1.0.0
+        description: This api provide custom server information
+        contact:
+          email: gustavo.boaz@hotmail.com
+
+springdoc:
+  swagger-ui:
+    path: /docs/swagger
+  api-docs:
+    path: /docs/openapi
