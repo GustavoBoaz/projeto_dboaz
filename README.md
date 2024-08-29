@@ -40,7 +40,7 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 3. **QA (Junior - Mid level - Senior)** - Develop test automation in the `qa_acceptance` module.
 4. **DEV (Junior)** - Add a feature section in this README within the module corresponding to the feature.
 5. **DEV (Mid level - Senior)** - Create UML diagrams that represent this feature.
-6. **DEV (Junior - Pleno - Senior)** - Develop the feature.
+6. **DEV (Junior - Mid level - Senior)** - Develop the feature.
 
 #### Pattern for new Branches (home branch):
 - if new feature: Feature/[Title-Feature]/[initial-date-aaaaMMdd]/[Owner.Name]
@@ -56,9 +56,9 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 - if spike: [Developer.Name]/Spike/[Title-Spike]-[Description commit]
 
 #### other Patters:
-- if ajust project: [aaaaMMdd]/[Owner.Name]/Ajust-[Description-ajust]
-- if update project: [aaaaMMdd]/[Owner.Name]/Update-[Description-update]
-- if create project: [aaaaMMdd]/[Owner.Name]/Create-[Description-create]
+- if update in project: [aaaaMMdd]/[Owner.Name]/UPDATE-[Description-update]
+- if create in project: [aaaaMMdd]/[Owner.Name]/CREATE-[Description-create]
+- if delete in project: [aaaaMMdd]/[Owner.Name]/DELETE-[Description-create]
 
 <span style="color:orange">**NOTE**</span>
 - All development must be done based on the home branch.
@@ -101,6 +101,9 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
   ```
 ### Features
 #### Feature F1# `Global info`:
+:white_circle: developing
+:white_circle: stopped
+:radio_button: done
 <details>
   <summary>🛠 View</summary>
 
@@ -143,6 +146,9 @@ Feature: Verify /info endpoint in all microservices
 </details><br>
 
 #### Feature F2# `Global SpringDoc`:
+:white_circle: developing
+:white_circle: stopped
+:radio_button: done
 <details>
   <summary>🛠 View</summary>
 
@@ -211,6 +217,7 @@ Feature: Verify /docs/openapi and /docs/swagger endpoint in all microservices
 | :------ | :------------------------------------------ |
 | `00.01` | **Description**: initial version            |
 | `00.02` | **New Feature**: Global info                |
+| `00.03` | **New Feature**: Global SpringDoc           |
 
 </details><br>
 
