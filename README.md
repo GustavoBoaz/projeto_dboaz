@@ -42,12 +42,28 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 5. **DEV (Mid level - Senior)** - Create UML diagrams that represent this feature.
 6. **DEV (Junior - Pleno - Senior)** - Develop the feature.
 
-#### Pattern Branch:
-- [aaaaMMdd]/[Your.Name]/Feature-[Description-feature]
+#### Pattern for new Branches (home branch):
+- if new feature: Feature/[Title-Feature]/[initial-date-aaaaMMdd]/[Owner.Name]
+- if new bug: Bug/[Title-Bug]/[initial-date-aaaaMMdd]/[Owner.Name]
+- if new spike: Spike/[Title-Spike]/[initial-date-aaaaMMdd]/[Owner.Name]
+#### Pattern worker in Branches (development branch):
+- if feature: [aaaaMMdd]/[Developer.Name]/Feature/[Title-Feature]/[Description-feature]
+- if bug: [aaaaMMdd]/[Developer.Name]/Bug/[Title-Bug]/[Description-bug]
+- if spike: [aaaaMMdd]/[Developer.Name]/Spike/[Title-Spike]/[Description-spike]
 #### Pattern Commit:
-- [aaaaMMdd]/[Your.Name]/Feature-[Description-feature]-[Description commit]
+- if feature: [Developer.Name]/Feature/[Title-Feature]-[Description commit]
+- if bug: [Developer.Name]/Bug/[Title-Bug]-[Description commit]
+- if spike: [Developer.Name]/Spike/[Title-Spike]-[Description commit]
+
+#### other Patters:
+- if ajust project: [aaaaMMdd]/[Owner.Name]/Ajust-[Description-ajust]
+- if update project: [aaaaMMdd]/[Owner.Name]/Update-[Description-update]
+- if create project: [aaaaMMdd]/[Owner.Name]/Create-[Description-create]
 
 <span style="color:orange">**NOTE**</span>
+- All development must be done based on the home branch.
+- To develop bas create a development branch based on the home branch corresponding to Feature, Bug or Spike.
+- Pull requests should be made to the home branch. When development is complete, the home branch should open a pull request to the main branch of the project.
 - In case of refactoring during the project, update the Gherkin documentation and UML diagrams first.
 - For common entities and those with a significant business impact, the Senior QA can create them in the `base_core` module.
 - For solid definitions, the Mid-Level or Senior QA can include UML diagrams in the feature section within this README in the qa_acceptance module.
