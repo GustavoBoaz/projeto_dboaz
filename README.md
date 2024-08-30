@@ -234,7 +234,7 @@ Feature: Verify /docs/openapi and /docs/swagger endpoint in all microservices
 
 *Information flow:*
 
-![](/asset_diagrams/f3/InformationFlow.png)
+![](/asset_diagrams/f3/d_information_flow.png)
 
 ##### Gherkin
 ```gherkin
