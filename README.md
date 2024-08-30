@@ -211,6 +211,95 @@ Feature: Verify /docs/openapi and /docs/swagger endpoint in all microservices
 ```
 </details><br>
 
+#### Feature F3# `Global Custom Alert`:
+:radio_button: developing
+:white_circle: stopped
+:white_circle: done
+<details>
+  <summary>🛠 View</summary>
+
+**This feature is about implementing custom alerts for all microservices.**
+- Owner QA Mid level or Senior - Create feature in readme `qa_acceptance`.
+- Owner QA Junior or Mid level - Create feature gherkin in `resources/features/global_customalert.feature`.
+- Owner QA Mid level or Senior - Create steps in `steps/GlobalCustomAlertStep.java`.
+- Owner DEV Junior Mid level or Senior - Implements feature in all microservices.
+- Owner QA Senior - Validate manual tests.
+
+**Util:**
+- [Controller Advice](https://docs.spring.io/spring-framework/reference/web/webflux/controller/ann-advice.html)
+- [Custom Exceptions in spring](https://medium.com/@themoinmalik/custom-exceptional-handling-using-controlleradvice-8fc66eb49d03)
+- [Custom Exceptions in java](https://medium.com/@salvipriya97/custom-exceptions-in-java-301ef3b568a3)
+
+**Diagrams:**
+
+*Information flow:*
+
+![](/asset_diagrams/f3/information_flow.png)
+
+##### Gherkin
+```gherkin
+Feature: Custom alert in microservices
+
+  """
+    As a developer
+    I want to ensure that all microservices return a custom alert
+    So that specific situations can be identified.
+    
+    Suggestive models:
+    - GlobalException
+      fiels:
+        - String message 
+        - Integer status
+        - CustomAlert alert
+    - CustomAlert
+      fields:
+        - SystemCodeEnum code
+        - String action
+    
+    Examples:
+      {
+        "message": "Internal server error",
+        "status": 500,
+        "alert": {
+          "code": "C001DB",
+          "action": "We are taking care of the problem, please try again later"
+        }
+      }
+      ....
+      {
+        "message": "Not found",
+        "status": 404,
+        "alert": {
+          "code": "C002DB",
+          "action": "The resource is not available"
+        }
+      }
+  """
+
+  Scenario Outline: Verify custom alert in microservices
+    Given `F3#` - the "<service_name>" microservice is running
+    When `F3#` - a request is made to the any endpoint that provides an alert
+    Then `F3#` - the microservice should return a custom alert
+      | GlobalException | CustomAlert |
+      | message         | code        |
+      | status          | action      |
+      | alert           |             |
+
+    Examples:
+      | service_name      |
+      | ms_auction        |
+      | ms_auth           |
+      | ms_bid            |
+      | ms_comment_rating |
+      | ms_logistic       |
+      | ms_messaging      |
+      | ms_notification   |
+      | ms_payment        |
+      | ms_product        |
+      | ms_profile        |
+```
+</details><br>
+
 ### Version
 
 | Number  | Descrição                                   |
