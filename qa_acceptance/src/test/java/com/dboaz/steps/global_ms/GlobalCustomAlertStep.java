@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.Iterator;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,9 +54,13 @@ public class GlobalCustomAlertStep extends SpringAcceptanceTest {
 
         if (iterator.hasNext()) className = iterator.next(); // Get index in first line
 
-        while (iterator.hasNext()) {
-            var entry = iterator.next();
-            assertTrue(json.containsKey(entry), "Key "+ entry +" not exist in " + className);
+        if (column.equals(1)) {
+            @SuppressWarnings("unchecked")
+            var alert = (Map<String, Object>) json.get("alert");
+            assertNotNull(alert, "Object alert is null");
+            interateJson(alert, iterator, className);
+        } else {
+            interateJson(json, iterator, className);
         }
     }
 
@@ -63,6 +68,13 @@ public class GlobalCustomAlertStep extends SpringAcceptanceTest {
         var content = response.getHeaders().getContentType();
         if (content != null) {
             assertEquals("application/json", content.toString(), "Response body is not application/json");
+        }
+    }
+
+    protected void interateJson(Map<String, Object> json, Iterator<String> iterator, String className) {
+        while (iterator.hasNext()) {
+            var entry = iterator.next();
+            if (entry != null) assertTrue(json.containsKey(entry), "Key "+ entry +" not exist in " + className);
         }
     }
 }
