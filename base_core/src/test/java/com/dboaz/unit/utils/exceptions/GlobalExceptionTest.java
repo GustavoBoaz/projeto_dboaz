@@ -17,7 +17,7 @@ class GlobalExceptionTest {
     void testGlobalExceptionBuilderWithStatusAndAlert() {
         // Arrange
         Integer status = 404;
-        CustomAlert alert = new CustomAlert(SystemCodeEnum.C0002DB);
+        CustomAlert alert = new CustomAlert(SystemCodeEnum.C002DB);
 
         // Act
         GlobalException exception = GlobalException.builder()
@@ -26,7 +26,7 @@ class GlobalExceptionTest {
             .build();
 
         // Assert
-        assertEquals("Resource not found", exception.getMessage());
+        assertEquals("Not found", exception.getMessage());
         assertEquals(status, exception.getStatus());
         assertEquals(alert, exception.getAlert());
     }
@@ -35,7 +35,7 @@ class GlobalExceptionTest {
     void testGlobalExceptionToJson() {
         // Arrange
         Integer status = 500;
-        CustomAlert alert = new CustomAlert(SystemCodeEnum.C0001DB);
+        CustomAlert alert = new CustomAlert(SystemCodeEnum.C001DB);
         GlobalException exception = GlobalException.builder()
             .status(status)
             .alert(alert)
