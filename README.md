@@ -320,32 +320,33 @@ Feature: Custom alert in microservices
 
 ##### Gherkin
 ```gherkin
-Feature: Redirect requests not founds to /notfound
+Feature: Redirect requests to /notfound
 
   """
-    As a developer
-    I want to ensure that all microservices return a custom alert when acces requests not founds
-    So that specific situations can be identified.
+  As a developer,
+  I want to ensure that all microservices return a standardized custom alert for non-existent endpoints
+  So that specific situations can be identified and handled consistently across services.
 
-    Example response:
-      {
-        "message": "Not found",
-        "status": 404,
-        "alert": {
-          "code": "C002DB",
-          "action": "The resource is not available"
-        }
+  Expected response format:
+    {
+      "message": "Not found",
+      "status": 404,
+      "alert": {
+        "code": "C002DB",
+        "action": "The resource is not available"
       }
+    }
   """
 
-  Scenario Outline: Verify custom alert in microservices
+  Scenario Outline: Verify custom alert response for non-existent endpoints
     Given `F4#` - the "<service_name>" microservice is running
-    When `F4#` - a request is made to the any endpoint that provides an alert
-    Then `F4#` - the microservice should return a custom alert
-      | GlobalException | CustomAlert |
-      | message         | code        |
-      | status          | action      |
-      | alert           |             |
+    When `F4#` - a request is made to an invalid or non-existent endpoint
+    Then `F4#` - the microservice should return a custom alert response
+      | Field           | Expected Value                |
+      | message         | Not found                     |
+      | status          | 404                           |
+      | alert.code      | C002DB                        |
+      | alert.action    | The resource is not available |
 
     Examples:
       | service_name      |
