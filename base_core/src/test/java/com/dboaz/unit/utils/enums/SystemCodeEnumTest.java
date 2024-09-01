@@ -10,15 +10,15 @@ class SystemCodeEnumTest {
 
     @Test
     void testC0001DBEnumValues() {
-        SystemCodeEnum code = SystemCodeEnum.C0001DB;
+        SystemCodeEnum code = SystemCodeEnum.C001DB;
         assertEquals("Internal server error", code.getProblem());
         assertEquals("Try a connection at another time", code.getAction());
     }
 
     @Test
     void testC0002DBEnumValues() {
-        SystemCodeEnum code = SystemCodeEnum.C0002DB;
-        assertEquals("Resource not found", code.getProblem());
-        assertEquals("Certify your request", code.getAction());
+        SystemCodeEnum code = SystemCodeEnum.C002DB;
+        assertEquals("Not found", code.getProblem());
+        assertEquals("The resource is not available", code.getAction());
     }
 }

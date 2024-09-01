@@ -1,3 +1,10 @@
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
+  web:
+    resources:
+      add-mappings: false
+
 microservice:
   ms_comment_rating:
     name: ms_comment_rating
