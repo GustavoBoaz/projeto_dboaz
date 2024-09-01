@@ -244,18 +244,18 @@ Feature: Custom alert in microservices
     As a developer
     I want to ensure that all microservices return a custom alert
     So that specific situations can be identified.
-
+    
     Suggestive models:
     - GlobalException
       fiels:
-        - String message
+        - String message 
         - Integer status
         - CustomAlert alert
     - CustomAlert
       fields:
         - SystemCodeEnum code
         - String action
-
+    
     Examples:
       {
         "message": "Internal server error",
@@ -845,15 +845,6 @@ In current folder run sh command `./dev_run.sh <name_module>`, this command buil
 
 ```bash
 ./dev_run.sh ms_auction
-```
-
-## Run ONE QA module local:
-
-In current folder run sh command `./qa_run.sh <name_module>`, this command build all modules and run expecific module. ex:
-- Execute `chmod +x qa_run.sh` case if not permition.
-
-```bash
-./qa_run.sh qa_acceptance
 ```
 
 ## Run docker-compose local: ONLY Linux
