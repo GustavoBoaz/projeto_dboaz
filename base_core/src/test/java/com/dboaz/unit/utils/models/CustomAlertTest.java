@@ -12,11 +12,11 @@ class CustomAlertTest {
     @Test
     void testCustomAlertWithC0001DB() {
         // Arrange
-        SystemCodeEnum code = SystemCodeEnum.C0001DB;
-        
+        SystemCodeEnum code = SystemCodeEnum.C001DB;
+
         // Act
         CustomAlert alert = new CustomAlert(code);
-        
+
         // Assert
         assertEquals(code, alert.getCode());
         assertEquals(code.getAction(), alert.getAction());
@@ -25,11 +25,11 @@ class CustomAlertTest {
     @Test
     void testCustomAlertWithC0002DB() {
         // Arrange
-        SystemCodeEnum code = SystemCodeEnum.C0002DB;
-        
+        SystemCodeEnum code = SystemCodeEnum.C002DB;
+
         // Act
         CustomAlert alert = new CustomAlert(code);
-        
+
         // Assert
         assertEquals(code, alert.getCode());
         assertEquals(code.getAction(), alert.getAction());
