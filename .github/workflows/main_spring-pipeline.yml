@@ -42,7 +42,20 @@ jobs:
           mvn -B install -DskipTests --file pom.xml
 
       - name: Build base_core module
-        run: mvn -pl base_core clean package
+        run: mvn -pl base_core clean package verify
+
+      - name: Project test coverage
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          paths: |
+            ${{ github.workspace }}/**/target/site/jacoco/jacoco.xml
+          token: ${{ secrets.DBOAZ_SECRET }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
+          title: '# :pushpin: Coverage Report'
+          pass-emoji: ':green_circle:'
+          fail-emoji: ':red_circle:'
 
   build_bff_gateway:
     runs-on: ubuntu-latest
@@ -62,7 +75,20 @@ jobs:
           mvn -B install -DskipTests --file pom.xml
 
       - name: Build bff_gateway module
-        run: mvn -pl bff_gateway clean package
+        run: mvn -pl bff_gateway clean package verify
+
+      - name: Project test coverage
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          paths: |
+            ${{ github.workspace }}/**/target/site/jacoco/jacoco.xml
+          token: ${{ secrets.DBOAZ_SECRET }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
+          title: '# :pushpin: Coverage Report'
+          pass-emoji: ':green_circle:'
+          fail-emoji: ':red_circle:'
 
   build_microservices:
     runs-on: ubuntu-latest
@@ -95,7 +121,20 @@ jobs:
           mvn -B install -DskipTests --file pom.xml
 
       - name: Build ${{ matrix.service }} module
-        run: mvn -pl ${{ matrix.service }} clean package
+        run: mvn -pl ${{ matrix.service }} clean package verify
+
+      - name: Project test coverage
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          paths: |
+            ${{ github.workspace }}/**/target/site/jacoco/jacoco.xml
+          token: ${{ secrets.DBOAZ_SECRET }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
+          title: '# :pushpin: Coverage Report'
+          pass-emoji: ':green_circle:'
+          fail-emoji: ':red_circle:'
 
   build_qa_acceptance:
     runs-on: ubuntu-latest
