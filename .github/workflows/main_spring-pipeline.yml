@@ -192,12 +192,39 @@ jobs:
           branches-label: branches (${{ matrix.module }})
           workflow-summary-heading: JaCoCo Test Coverage Summary ${{ matrix.module }}
 
+      - name: Delay for sequential execution
+        run: |
+          if [ "${{ matrix.service }}" == "base_core" ]; then
+            sleep 5
+          elif [ "${{ matrix.service }}" == "bff_gateway" ]; then
+            sleep 10
+          elif [ "${{ matrix.service }}" == "ms_auction" ]; then
+            sleep 15
+          elif [ "${{ matrix.service }}" == "ms_auth" ]; then
+            sleep 20
+          elif [ "${{ matrix.service }}" == "ms_bid" ]; then
+            sleep 25
+          elif [ "${{ matrix.service }}" == "ms_comment_rating" ]; then
+            sleep 30
+          elif [ "${{ matrix.service }}" == "ms_logistic" ]; then
+            sleep 35
+          elif [ "${{ matrix.service }}" == "ms_messaging" ]; then
+            sleep 40
+          elif [ "${{ matrix.service }}" == "ms_notification" ]; then
+            sleep 45
+          elif [ "${{ matrix.service }}" == "ms_payment" ]; then
+            sleep 50
+          elif [ "${{ matrix.service }}" == "ms_product" ]; then
+            sleep 55
+          elif [ "${{ matrix.service }}" == "ms_profile" ]; then
+            sleep 60
+          fi
+
       - name: Commit the badge (if it changed)
         env:
           token: ${{ secrets.DBOAZ_SECRET }}
         run: |
           if [[ `git status --porcelain` ]]; then
-            slep 5
             git pull
             git config --global user.name 'GustavoBoaz'
             git config --global user.email 'GustavoBoaz@users.noreply.github.com'
