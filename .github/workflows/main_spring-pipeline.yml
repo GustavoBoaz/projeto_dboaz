@@ -54,6 +54,7 @@ jobs:
           min-coverage-overall: 40
           min-coverage-changed-files: 60
           title: '# :pushpin: Coverage Report base_core'
+          update-comment: true
           pass-emoji: ':green_circle:'
           fail-emoji: ':red_circle:'
 
@@ -87,6 +88,7 @@ jobs:
           min-coverage-overall: 40
           min-coverage-changed-files: 60
           title: '# :pushpin: Coverage Report bff_gateway'
+          update-comment: true
           pass-emoji: ':green_circle:'
           fail-emoji: ':red_circle:'
 
@@ -133,6 +135,7 @@ jobs:
           min-coverage-overall: 40
           min-coverage-changed-files: 60
           title: "# :pushpin: Coverage Report ${{ matrix.service }}"
+          update-comment: true
           pass-emoji: ':green_circle:'
           fail-emoji: ':red_circle:'
 
