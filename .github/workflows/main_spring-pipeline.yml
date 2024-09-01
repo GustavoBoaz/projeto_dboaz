@@ -184,7 +184,7 @@ jobs:
           fail-emoji: ':red_circle:'
 
       - name: Generate JaCoCo badges for ${{ matrix.service }}
-        id: jacoco_${{ matrix.service }}
+        id: "jacoco_${{ matrix.service }}"
         uses: cicirello/jacoco-badge-generator@v2
         with:
           generate-branches-badge: true
