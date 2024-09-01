@@ -2,7 +2,26 @@
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/GustavoBoaz/projeto_dboaz/main_spring-pipeline.yml)
 
-The "dboaz-project" is a comprehensive online auction system designed to facilitate the buying and selling of a variety of products in a secure and efficient virtual environment. Below is a detailed description of the main components of the project:
+The "dboaz-project" is a comprehensive online auction system designed to facilitate the buying and selling of a variety of products in a secure and efficient virtual environment. Below is a detailed description of the main components of the project.
+
+## Coverage test
+
+| MODULE            | COVERAGE                                                 | BRANCHES                                                   |
+|:------------------|---------------------------------------------------------:|-----------------------------------------------------------:|
+| base_code         | ![Coverage](.github/badges/jacoco_base_core.svg)         | ![Branches](.github/badges/branches_base_core.svg)         |
+| bff_gateway       | ![Coverage](.github/badges/jacoco_bff_gateway.svg)       | ![Branches](.github/badges/branches_bff_gateway.svg)       |
+| ms_auction        | ![Coverage](.github/badges/jacoco_ms_auction.svg)        | ![Branches](.github/badges/branches_ms_auction.svg)        |
+| ms_auth           | ![Coverage](.github/badges/jacoco_ms_auth.svg)           | ![Branches](.github/badges/branches_ms_auth.svg)           |
+| ms_bid            | ![Coverage](.github/badges/jacoco_ms_bid.svg)            | ![Branches](.github/badges/branches_ms_bid.svg)            |
+| ms_comment_rating | ![Coverage](.github/badges/jacoco_ms_comment_rating.svg) | ![Branches](.github/badges/branches_ms_comment_rating.svg) |
+| ms_logistic       | ![Coverage](.github/badges/jacoco_ms_logistic.svg)       | ![Branches](.github/badges/branches_ms_logistic.svg)       |
+| ms_messaging      | ![Coverage](.github/badges/jacoco_ms_messaging.svg)      | ![Branches](.github/badges/branches_ms_messaging.svg)      |
+| ms_notification   | ![Coverage](.github/badges/jacoco_ms_notification.svg)   | ![Branches](.github/badges/branches_ms_notification.svg)   |
+| ms_payment        | ![Coverage](.github/badges/jacoco_ms_payment.svg)        | ![Branches](.github/badges/branches_ms_payment.svg)        |
+| ms_product        | ![Coverage](.github/badges/jacoco_ms_product.svg)        | ![Branches](.github/badges/branches_ms_product.svg)        |
+| ms_profile        | ![Coverage](.github/badges/jacoco_ms_profile.svg)        | ![Branches](.github/badges/branches_ms_profile.svg)        |
+
+<br>
 
 ### Author
 - [@gustavoboaz](https://github.com/GustavoBoaz)
@@ -59,6 +78,10 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 - if update in project: [aaaaMMdd]/[Owner.Name]/UPDATE-[Description-update]
 - if create in project: [aaaaMMdd]/[Owner.Name]/CREATE-[Description-create]
 - if delete in project: [aaaaMMdd]/[Owner.Name]/DELETE-[Description-create]
+  
+- if update in project: [Owner.Name]/UPDATE-[Description-update]
+- if create in project: [Owner.Name]/CREATE-[Description-create]
+- if delete in project: [Owner.Name]/DELETE-[Description-create]
 
 <span style="color:orange">**NOTE**</span>
 - All development must be done based on the home branch.
@@ -372,6 +395,7 @@ Feature: Redirect requests to /notfound
 | `00.02` | **New Feature**: Global info                |
 | `00.03` | **New Feature**: Global SpringDoc           |
 | `00.04` | **New Feature**: Global Custom Alert        |
+| `00.05` | **New Feature**: Error Not Found            |
 
 </details><br>
 
