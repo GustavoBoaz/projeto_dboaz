@@ -212,9 +212,9 @@ Feature: Verify /docs/openapi and /docs/swagger endpoint in all microservices
 </details><br>
 
 #### Feature F3# `Global Custom Alert`:
-:radio_button: developing
+:white_circle: developing
 :white_circle: stopped
-:white_circle: done
+:radio_button: done
 <details>
   <summary>🛠 View</summary>
 
@@ -300,6 +300,69 @@ Feature: Custom alert in microservices
 ```
 </details><br>
 
+#### Feature F4# `Error Not Found`:
+:radio_button: developing
+:white_circle: stopped
+:white_circle: done
+<details>
+  <summary>🛠 View</summary>
+
+**This feature is about implementing custom alerts for all microservices.**
+- Owner QA Mid level or Senior - Create feature in readme `qa_acceptance`.
+- Owner QA Junior or Mid level - Create feature gherkin in `resources/features/global_ms/global_errornotfound.feature`.
+- Owner QA Mid level or Senior - Create steps in `steps/global_ms/GlobalErrorNotFoundStep.java`.
+- Owner DEV Junior Mid level or Senior - Implements feature in all microservices.
+- Owner QA Senior - Validate manual tests.
+
+**Util:**
+- [Controller Advice](https://docs.spring.io/spring-framework/reference/web/webflux/controller/ann-advice.html)
+- [Redirect](https://www.baeldung.com/spring-redirect-and-forward)
+
+##### Gherkin
+```gherkin
+Feature: Redirect requests not founds to /notfound
+
+  """
+    As a developer
+    I want to ensure that all microservices return a custom alert when acces requests not founds
+    So that specific situations can be identified.
+
+    Example response:
+      {
+        "message": "Not found",
+        "status": 404,
+        "alert": {
+          "code": "C002DB",
+          "action": "The resource is not available"
+        }
+      }
+  """
+
+  Scenario Outline: Verify custom alert in microservices
+    Given `F4#` - the "<service_name>" microservice is running
+    When `F4#` - a request is made to the any endpoint that provides an alert
+    Then `F4#` - the microservice should return a custom alert
+      | GlobalException | CustomAlert |
+      | message         | code        |
+      | status          | action      |
+      | alert           |             |
+
+    Examples:
+      | service_name      |
+      | ms_auction        |
+      | ms_auth           |
+      | ms_bid            |
+      | ms_comment_rating |
+      | ms_logistic       |
+      | ms_messaging      |
+      | ms_notification   |
+      | ms_payment        |
+      | ms_product        |
+      | ms_profile        |
+```
+</details><br>
+
+
 ### Version
 
 | Number  | Descrição                                   |
@@ -307,6 +370,7 @@ Feature: Custom alert in microservices
 | `00.01` | **Description**: initial version            |
 | `00.02` | **New Feature**: Global info                |
 | `00.03` | **New Feature**: Global SpringDoc           |
+| `00.04` | **New Feature**: Global Custom Alert        |
 
 </details><br>
 
