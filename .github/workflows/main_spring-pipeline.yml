@@ -256,5 +256,5 @@ jobs:
       - name: Geneate cucumber report
         uses: deblockt/cucumber-report-annotations-action@v1.7
         with:
-          github_token: ${{ secrets.DBOAZ_SECRET }}
+          token: ${{ secrets.DBOAZ_SECRET }}
           path: "qa_acceptance/target/cucumber/report.json"
