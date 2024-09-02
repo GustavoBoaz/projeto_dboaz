@@ -253,7 +253,8 @@ jobs:
       - name: Build qa_acceptance module
         run: mvn -pl qa_acceptance clean verify
 
-      - uses: deblockt/cucumber-report-annotations-action@v1.7
+      - name: Geneate cucumber report
+        uses: deblockt/cucumber-report-annotations-action@v1.7
         with:
           access-token: ${{ secrets.DBOAZ_SECRET }}
-          path: ${{ github.workspace }}/qa_acceptance/target/cucumber/report.json
+          path: "qa_acceptance/target/cucumber/report.json"
