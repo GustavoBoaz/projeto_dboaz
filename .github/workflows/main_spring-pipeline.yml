@@ -257,4 +257,4 @@ jobs:
         uses: deblockt/cucumber-report-annotations-action@v1.7
         with:
           access-token: ${{ secrets.DBOAZ_SECRET }}
-          path: "qa_acceptance/target/cucumber/cucumber-report.json"
+          path: "qa_acceptance/target/cucumber-report.json"
