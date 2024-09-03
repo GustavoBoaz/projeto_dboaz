@@ -6,7 +6,7 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 
 ## Coverage test
 
-| MODULE            | COVERAGE                                                 | BRANCHES                                                   |
+| MODULE            | TEST COVERAGE                                            | BRANCHES                                                   |
 |:------------------|---------------------------------------------------------:|-----------------------------------------------------------:|
 | base_code         | ![Coverage](.github/badges/jacoco_base_core.svg)         | ![Branches](.github/badges/branches_base_core.svg)         |
 | bff_gateway       | ![Coverage](.github/badges/jacoco_bff_gateway.svg)       | ![Branches](.github/badges/branches_bff_gateway.svg)       |
@@ -78,10 +78,12 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 - if update in project: [aaaaMMdd]/[Owner.Name]/UPDATE-[Description-update]
 - if create in project: [aaaaMMdd]/[Owner.Name]/CREATE-[Description-create]
 - if delete in project: [aaaaMMdd]/[Owner.Name]/DELETE-[Description-create]
-  
-- if update in project: [Owner.Name]/UPDATE-[Description-update]
-- if create in project: [Owner.Name]/CREATE-[Description-create]
-- if delete in project: [Owner.Name]/DELETE-[Description-create]
+
+<br>
+
+- when small update: [Owner.Name]/UPDATE-[Description-update]
+- when small create: [Owner.Name]/CREATE-[Description-create]
+- when small delete: [Owner.Name]/DELETE-[Description-create]
 
 <span style="color:orange">**NOTE**</span>
 - All development must be done based on the home branch.
@@ -101,7 +103,7 @@ The "dboaz-project" is a comprehensive online auction system designed to facilit
 
 </details><br><br>
 
-# Description packages
+# Quality assurance packages
 <details>
   <summary>🛠 View</summary>
 
@@ -324,9 +326,9 @@ Feature: Custom alert in microservices
 </details><br>
 
 #### Feature F4# `Error Not Found`:
-:radio_button: developing
+:white_circle: developing
 :white_circle: stopped
-:white_circle: done
+:radio_button: done
 <details>
   <summary>🛠 View</summary>
 
@@ -398,6 +400,13 @@ Feature: Redirect requests to /notfound
 | `00.05` | **New Feature**: Error Not Found            |
 
 </details><br>
+
+
+</details><br><br>
+
+# Developer packages
+<details>
+  <summary>🛠 View</summary>
 
 ## lib_common/
 
