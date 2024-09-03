@@ -11,7 +11,6 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,7 +29,7 @@ class InfoCommentRatingControllerTest {
     @Value("${microservice.ms_comment_rating.version}") String version;
     @Value("${microservice.ms_comment_rating.description}") String description;
 
-    @MockBean InfoCommentRatingController controller;
+    @MockBean GlobalInfo serviceInfo;
 
     @BeforeEach
     void setUp() {
@@ -39,7 +38,7 @@ class InfoCommentRatingControllerTest {
 
     @Test
     void testGetInfo() throws Exception {
-        when(controller.getInfo()).thenReturn(stub());
+        when(serviceInfo.build()).thenReturn(stub());
 
         mockMvc.perform(get(Route.GET_INFO))
             .andExpect(status().isOk())
@@ -48,11 +47,9 @@ class InfoCommentRatingControllerTest {
             .andExpect(jsonPath("$.description").value(description));
     }
 
-    protected ResponseEntity<GlobalInfo> stub() {
-      var globalInfo = GlobalInfo.builder()
-          .name(name).version(version).description(description)
-          .build();
-
-      return ResponseEntity.ok(globalInfo);
+    protected GlobalInfo stub() {
+        return GlobalInfo.builder()
+            .name(name).version(version).description(description)
+            .build();
     }
 }
