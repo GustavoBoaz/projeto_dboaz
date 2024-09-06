@@ -389,9 +389,9 @@ Feature: Redirect requests to /notfound
 </details><br>
 
 #### Feature F5# `Redirect to Swagger`:
-:radio_button: developing
+:white_circle: developing
 :white_circle: stopped
-:white_circle: done
+:radio_button: done
 <details>
   <summary>🛠 View</summary>
 
@@ -450,9 +450,45 @@ Feature: Redirect requests base path / to /docs/swagger
 | `00.03` | **New Feature**: Global SpringDoc           |
 | `00.04` | **New Feature**: Global Custom Alert        |
 | `00.05` | **New Feature**: Error Not Found            |
+| `00.06` | **New Feature**: Redirect to swagger        |
 
 </details><br>
 
+## qa_load/
+👨‍💻Responseible for project of load test
+<details>
+    <summary>🛠 Details</summary>
+    <h3>Tree</h3>
+
+  ```tree
+  .
+  ├── src/
+      └── test/
+          ├── java/
+          |   └── com/
+          |        └── dboaz/
+          |           ├── ms_auction/
+          |           ├── ms_auth/
+          |           ├── ms_bid/
+          |           ├── ms_comment_rating/
+          |           ├── ms_logistic/
+          |           ├── ms_messaging/
+          |           ├── ms_notification/
+          |           ├── ms_payment/
+          |           ├── ms_product/
+          |           ├── ms_profile/
+          |           └── utils/
+          └── resources/
+              └── logback-test.xml
+  ```
+
+### Version
+
+| Number  | Descrição                                   |
+| :------ | :------------------------------------------ |
+| `00.01` | **Description**: initial version            |
+
+</details><br>
 
 </details><br><br>
 
