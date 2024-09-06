@@ -18,6 +18,7 @@
         <spring.boot-version>3.3.2</spring.boot-version>
         <cucumber-version>7.14.0</cucumber-version>
         <springdoc.openapi-version>2.5.0</springdoc.openapi-version>
+        <gatling.version>3.11.5</gatling.version>
     </properties>
 
     <dependencies>
@@ -81,6 +82,19 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webflux-api</artifactId>
             <version>${springdoc.openapi-version}</version>
+        </dependency>
+
+        <!-- Gatling -->
+        <dependency>
+            <groupId>io.gatling</groupId>
+            <artifactId>gatling-app</artifactId>
+            <version>${gatling.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.gatling.highcharts</groupId>
+            <artifactId>gatling-charts-highcharts</artifactId>
+            <version>${gatling.version}</version>
         </dependency>
 
     </dependencies>

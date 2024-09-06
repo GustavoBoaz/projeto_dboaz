@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+		<groupId>com.dboaz</groupId>
+		<artifactId>project-dboaz</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+  <artifactId>qa_load</artifactId>
+
+  <properties>
+    <maven.compiler.release>21</maven.compiler.release>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <gatling-maven-plugin.version>4.9.6</gatling-maven-plugin.version>
+    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
+    <maven-resources-plugin.version>3.3.1</maven-resources-plugin.version>
+    <maven-jar-plugin.version>3.4.2</maven-jar-plugin.version>
+    <maven.sufire.plugin-version>3.1.2</maven.sufire.plugin-version>
+  </properties>
+
+  <dependencies>
+
+    <!-- Internal dependencies -->
+		<dependency>
+			<groupId>com.dboaz</groupId>
+			<artifactId>lib_common</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+    <dependency>
+        <groupId>com.dboaz</groupId>
+        <artifactId>base_core</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+
+    <!-- External dependencies -->
+
+  </dependencies>
+
+  <build>
+    <plugins>
+
+      <!-- Maven plugins -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven-resources-plugin.version}</version>
+      </plugin>
+      <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>${maven-jar-plugin.version}</version>
+      </plugin>
+      <plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.sufire.plugin-version}</version>
+			</plugin>
+
+      <!-- Gatrling plugin -->
+      <plugin>
+        <groupId>io.gatling</groupId>
+        <artifactId>gatling-maven-plugin</artifactId>
+        <version>${gatling-maven-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test</goal>
+              <goal>enterprisePackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>
