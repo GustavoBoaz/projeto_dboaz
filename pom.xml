@@ -34,6 +34,7 @@
         <module>ms_profile</module>
 
         <module>qa_acceptance</module>
+        <module>qa_load</module>
     </modules>
 
 </project>
