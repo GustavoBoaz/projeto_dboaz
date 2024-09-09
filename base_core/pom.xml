@@ -37,6 +37,25 @@
                 </configuration>
             </plugin>
 
+            <!-- Plugin generated main class Manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <packageName>com.dboaz</packageName>
+                            <classpathPrefix>dependency-dboaz-jars/</classpathPrefix>
+                        </manifest>
+                        <manifestEntries>
+                            <Created-By>GustavoBoaz</Created-By>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <!-- Plugin generated dependencies classpath in Manifest -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -91,6 +110,25 @@
 					</execution>
 				</executions>
 			</plugin>
+
+            <!-- Pling exec: Execute Class in stage prepare-package -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-rsa-keys</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>com.dboaz.utils.security.RSAKeyGenerator</mainClass>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
     </build>
