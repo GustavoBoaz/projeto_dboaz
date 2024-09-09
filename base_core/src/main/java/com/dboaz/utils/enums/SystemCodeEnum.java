@@ -31,7 +31,9 @@ package com.dboaz.utils.enums;
  **/
 public enum SystemCodeEnum {
     C001DB("Internal server error", "Try a connection at another time"),
-    C002DB("Not found", "The resource is not available");
+    C002DB("Not found", "The resource is not available"),
+    C020DB("Failed generate key pair", "Contact team developer");
+
 private final String problem;
     private final String action;
 
