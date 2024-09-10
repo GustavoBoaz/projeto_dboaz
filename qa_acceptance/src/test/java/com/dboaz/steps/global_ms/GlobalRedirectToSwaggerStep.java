@@ -30,7 +30,9 @@ public class GlobalRedirectToSwaggerStep extends SpringAcceptanceTest {
 
     @When("`F5#` - make a GET request to {string}")
     public void f5_make_a_get_request_to(String path) {
-        response = rest.getForEntity(path, String.class);
+        response = rest
+            .withBasicAuth("dboaz", "dboaz")    
+            .getForEntity(path, String.class);
     }
 
     @Then("`F5#` - the response should have an HTTP status {int}")

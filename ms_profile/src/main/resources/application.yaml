@@ -23,3 +23,12 @@ springdoc:
     path: /docs/swagger
   api-docs:
     path: /docs/openapi
+
+credentials:
+  username: dboaz
+  password: dboaz
+  authorities: app
+
+jwt:
+  private.key: classpath:private.key
+  public.key: classpath:public.pub
