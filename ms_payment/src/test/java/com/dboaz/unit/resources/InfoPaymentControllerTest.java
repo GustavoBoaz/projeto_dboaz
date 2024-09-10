@@ -11,6 +11,7 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,7 @@ class InfoPaymentControllerTest {
         MockitoAnnotations.openMocks(this);
     }
 
+    @WithMockUser(username = "dboaz", password = "dboaz", authorities = "app")
     @Test
     void testGetInfo() throws Exception {
         when(serviceInfo.build()).thenReturn(stub());

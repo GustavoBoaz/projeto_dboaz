@@ -16,6 +16,7 @@
 
     <properties>
         <spring.boot-version>3.3.2</spring.boot-version>
+        <spring.boot.test-version>6.3.3</spring.boot.test-version>
         <cucumber-version>7.14.0</cucumber-version>
         <springdoc.openapi-version>2.5.0</springdoc.openapi-version>
         <gatling.version>3.11.5</gatling.version>
@@ -43,6 +44,27 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot-version}</version>
+        </dependency>
+
+        <!-- Spring boot starter security -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>${spring.boot-version}</version>
+        </dependency>
+
+        <!-- Spring boot starter security test -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-test</artifactId>
+            <version>${spring.boot.test-version}</version>
+        </dependency>
+
+        <!-- Spring boot starter oauth2 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-oauth2-resource-server</artifactId>
             <version>${spring.boot-version}</version>
         </dependency>
 

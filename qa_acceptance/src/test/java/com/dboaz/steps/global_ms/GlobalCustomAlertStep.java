@@ -34,7 +34,9 @@ public class GlobalCustomAlertStep extends SpringAcceptanceTest {
 
     @When("`F3#` - a request is made to the any endpoint that provides an alert")
     public void f3_a_request_is_made_to_the_any_endpoint_that_provides_an_alert() {
-        response = rest.getForEntity("/fail/endpoint", Object.class);
+        response = rest
+            .withBasicAuth("dboaz", "dboaz")
+            .getForEntity("/fail/endpoint", Object.class);
     }
 
     @Then("`F3#` - the microservice should return a custom alert")
