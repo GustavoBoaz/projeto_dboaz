@@ -34,7 +34,9 @@ public class GlobalErrorNotFoundStep extends SpringAcceptanceTest {
 
     @When("`F4#` - a request is made to an invalid or non-existent endpoint")
     public void f4_a_request_is_made_to_an_invalid_or_non_existent_endpoint() {
-         response = rest.getForEntity("/fail/endpoint", Object.class);
+         response = rest
+            .withBasicAuth("dboaz", "dboaz")
+            .getForEntity("/fail/endpoint", Object.class);
     }
 
     @Then("`F4#` - the microservice should return a custom alert response")
