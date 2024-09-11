@@ -107,6 +107,11 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
+                        <configuration>
+                            <excludes>
+                                <exclude>com/dboaz/utils/security/**</exclude>
+                            </excludes>
+                        </configuration>
 					</execution>
 				</executions>
 			</plugin>
