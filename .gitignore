@@ -30,3 +30,9 @@ replay_pid*
 .vscode/
 .idea/
 .vim/
+
+# Foldes and local configs
+.project
+.settings
+*/.classpath
+*/.project
