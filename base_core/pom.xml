@@ -110,6 +110,9 @@
                         <configuration>
                             <excludes>
                                 <exclude>com/dboaz/utils/security/**</exclude>
+                                <exclude>com/dboaz/ms_*/dtos/**</exclude>
+                                <exclude>com/dboaz/ms_*/enums/**</exclude>
+                                <exclude>com/dboaz/ms_*/models/**</exclude>
                             </excludes>
                         </configuration>
 					</execution>
