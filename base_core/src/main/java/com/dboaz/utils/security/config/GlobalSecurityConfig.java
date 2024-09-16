@@ -16,7 +16,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configurers.oauth2.server.resource.OAuth2ResourceServerConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -34,26 +33,26 @@ public class GlobalSecurityConfig {
 
 	@Value("${jwt.public.key}") RSAPublicKey key;
 	@Value("${jwt.private.key}") RSAPrivateKey priv;
-  @Value("${credentials.username}") String username;
-  @Value("${credentials.password}") String password;
-  @Value("${credentials.authorities}") String authorities;
+    @Value("${credentials.username}") String username;
+    @Value("${credentials.password}") String password;
+    @Value("${credentials.authorities}") String authorities;
 
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-				.authorizeHttpRequests((authorize) -> {
+		.authorizeHttpRequests((authorize) -> {
             authorize.requestMatchers(HttpMethod.GET, "/docs/**").permitAll();
             authorize.requestMatchers(HttpMethod.GET, "*/info").permitAll();
             authorize.anyRequest().authenticated();
         })
-				.csrf((csrf) -> csrf.ignoringRequestMatchers("/auth"))
-				.httpBasic(Customizer.withDefaults())
-				.oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
-				.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-				.exceptionHandling((exceptions) -> exceptions
-						.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
-						.accessDeniedHandler(new BearerTokenAccessDeniedHandler())
-				);
+		.csrf((csrf) -> csrf.ignoringRequestMatchers("/auth"))
+		.httpBasic(Customizer.withDefaults())
+		.oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
+		.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+		.exceptionHandling((exceptions) -> exceptions
+			.authenticationEntryPoint(new BearerTokenAuthenticationEntryPoint())
+			.accessDeniedHandler(new BearerTokenAccessDeniedHandler())
+		);
 		return http.build();
 	}
 
