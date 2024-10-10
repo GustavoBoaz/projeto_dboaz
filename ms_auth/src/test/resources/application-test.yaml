@@ -3,3 +3,9 @@ microservice:
     name: ms_auth
     version: v1
     description: Responsible for user management, authentication and authorization
+
+spring:
+  redis:
+    host: localhost
+    port: 6379
+

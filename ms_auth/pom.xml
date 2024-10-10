@@ -13,6 +13,10 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
+    <properties>
+        <spring.boot-version>3.3.2</spring.boot-version>
+    </properties>
+    
     <dependencies>
 
         <!-- Internal dependencies -->
@@ -29,6 +33,13 @@
         </dependency>
 
         <!-- External dependencies -->
+        
+        <!-- Spring data redis -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <version>${spring.boot-version}</version>
+        </dependency>
 
     </dependencies>
 

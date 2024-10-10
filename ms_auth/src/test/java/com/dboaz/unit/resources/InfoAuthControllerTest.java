@@ -16,7 +16,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.dboaz.ms_auth.utils.constants.Route;
+import com.dboaz.ms_auth.core.utils.constants.Route;
 import com.dboaz.resources.InfoAuthController;
 import com.dboaz.utils.models.GlobalInfo;
 

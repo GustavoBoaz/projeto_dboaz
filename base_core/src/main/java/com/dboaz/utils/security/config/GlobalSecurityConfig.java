@@ -3,6 +3,7 @@ package com.dboaz.utils.security.config;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 
+import com.dboaz.ms_auth.core.utils.constants.Route;
 import com.nimbusds.jose.jwk.JWK;
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -15,6 +16,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
@@ -29,6 +31,7 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableMethodSecurity
 public class GlobalSecurityConfig {
 
 	@Value("${jwt.public.key}") RSAPublicKey key;
@@ -40,12 +43,19 @@ public class GlobalSecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
-		.authorizeHttpRequests((authorize) -> {
+		.authorizeHttpRequests(authorize -> {
+            // SWAGGER - REDDOCs
             authorize.requestMatchers(HttpMethod.GET, "/docs/**").permitAll();
-            authorize.requestMatchers(HttpMethod.GET, "*/info").permitAll();
+            // MS_AUTH
+            authorize.requestMatchers(HttpMethod.POST, Route.POST_ACCOUNT_TOKEN_BY_LOGIN).permitAll();
+            authorize.requestMatchers(HttpMethod.POST, Route.POST_ACCOUNT_NEW).permitAll();
+            // OTHER REQUESTS
             authorize.anyRequest().authenticated();
         })
-		.csrf((csrf) -> csrf.ignoringRequestMatchers("/auth"))
+		.csrf(csrf -> {
+			csrf.ignoringRequestMatchers(Route.POST_ACCOUNT_NEW);
+			csrf.ignoringRequestMatchers(Route.POST_ACCOUNT_TOKEN_BY_LOGIN);
+		})
 		.httpBasic(Customizer.withDefaults())
 		.oauth2ResourceServer(oauth2 -> oauth2.jwt(Customizer.withDefaults()))
 		.sessionManagement((session) -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
