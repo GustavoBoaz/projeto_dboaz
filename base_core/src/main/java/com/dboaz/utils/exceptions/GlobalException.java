@@ -3,6 +3,7 @@ package com.dboaz.utils.exceptions;
 import java.util.Map;
 
 import com.dboaz.utils.models.CustomAlert;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**
  * Model Class for feature Global Custom Alert
@@ -17,10 +18,11 @@ import com.dboaz.utils.models.CustomAlert;
  * 
  * <pre>
  * {@code
- *   CustomAlert alert = new CustomAlert(SystemCodeEnum.C0001DB, "Additional details");
+ *   CustomAlert alert = new CustomAlert(SystemCodeEnum.C0001DB);
  *   GlobalException exception = GlobalException.builder()
  *       .status(500)
  *       .alert(alert)
+ *       .details("Additional details")
  *       .build();
  *   
  *   throw exception;
@@ -42,10 +44,12 @@ import com.dboaz.utils.models.CustomAlert;
  * @author GustavoBoaz
  * @version 1.0.0
  **/
+@JsonIgnoreProperties({"cause", "stackTrace", "suppressed", "localizedMessage"})
 public class GlobalException extends RuntimeException {
     private static final long serialVersionUID = 1L;
 
     // Atributes
+    private String details;
     private String message;
     private Integer status;
     private CustomAlert alert;
@@ -60,19 +64,23 @@ public class GlobalException extends RuntimeException {
         return this;
     }
 
+    public GlobalException details(String details) { this.details = details; return this; }
+
     public GlobalException build() { return this; }
 
     // Getters
     @Override public String getMessage() { return this.message; }
     public Integer getStatus() { return this.status; }
     public CustomAlert getAlert() { return this.alert; }
+    public String getDetails() { return this.details; }
 
     // Mapper to Json
     public Map<String, Object> toJson() {
         return Map.of(
             "message", this.message,
             "status", this.status,
-            "alert", this.alert
+            "alert", this.alert,
+            "details", this.details == null ? "" : this.details
         );
     }
 }

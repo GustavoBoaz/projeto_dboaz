@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dboaz.ms_auth.utils.constants.Route;
+import com.dboaz.ms_auth.core.utils.constants.Route;
 import com.dboaz.utils.models.GlobalInfo;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,7 +26,8 @@ public class InfoAuthController {
     @Value("${microservice.ms_auth.version}") String version;
     @Value("${microservice.ms_auth.description}") String description;
 
-    @Operation(description = "Provide custom server info", responses = {
+    @Operation(
+    description = "Provide custom server info", responses = {
         @ApiResponse(responseCode = "200", description = "retrieve global info api", content = {
             @Content(mediaType = "application/json", schema = @Schema(implementation = GlobalInfo.class))
         }),

@@ -20,6 +20,8 @@
         <cucumber-version>7.14.0</cucumber-version>
         <springdoc.openapi-version>2.5.0</springdoc.openapi-version>
         <gatling.version>3.11.5</gatling.version>
+        <commons.pool2-version>2.11.1</commons.pool2-version>
+        <jackson.core-version>2.17.2</jackson.core-version>
     </properties>
 
     <dependencies>
@@ -119,6 +121,19 @@
             <version>${gatling.version}</version>
         </dependency>
 
+        <!-- Commons-pool2 for redis -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-pool2</artifactId>
+            <version>${commons.pool2-version}</version>
+        </dependency>
+
+        <!-- Jackson Serialize for redis -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.core-version}</version>
+        </dependency>
     </dependencies>
 
 </project>

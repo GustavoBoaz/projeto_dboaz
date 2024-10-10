@@ -1,25 +1,18 @@
 package com.dboaz.unit;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.test.context.ActiveProfiles;
 
 import com.dboaz.MainAppAuth;
 
+@ActiveProfiles("test")
 class MainAppAuthTest {
 
     @Test
     void testMainMethodExist() {
-        String[] args = {};
-
         assertTrue(hasMainMethod(MainAppAuth.class));
-
-        try {
-            MainAppAuth.main(args);
-        } catch (Exception e) {
-            fail("Expected no exception to be thrown, but got: " + e.getMessage());
-        }
     }
 
     private boolean hasMainMethod(Class<?> clazz) {

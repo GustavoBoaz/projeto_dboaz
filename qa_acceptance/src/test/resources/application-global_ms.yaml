@@ -126,7 +126,7 @@ springdoc:
 credentials:
   username: dboaz
   password: dboaz
-  authorities: app
+  authorities: DBO_ADM_DEV
 
 jwt:
   private.key: classpath:private.key

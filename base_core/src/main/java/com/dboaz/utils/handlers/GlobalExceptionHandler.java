@@ -3,6 +3,7 @@ package com.dboaz.utils.handlers;
 import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.NoHandlerFoundException;
@@ -61,10 +62,12 @@ public class GlobalExceptionHandler {
      * @return a {@link ResponseEntity} containing a generic error response in JSON format
      */
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<Map<String, Object>> handleGenericException(Exception ex) {
+    public ResponseEntity<Map<String, Object>> handleGenericException(Throwable ex) {
+        ex.printStackTrace();
         var exception = GlobalException.builder()
             .status(500)
             .alert(new CustomAlert(SystemCodeEnum.C001DB))
+            .details(ex.getMessage())
             .build();
 
         return ResponseEntity.status(500).body(exception.toJson());
@@ -93,12 +96,24 @@ public class GlobalExceptionHandler {
      *         with a status code of 404 (Not Found)
      */
     @ExceptionHandler(NoHandlerFoundException.class)
-    public ResponseEntity<Map<String, Object>> handleNotFoundException(NoHandlerFoundException ex) {
+    public ResponseEntity<Map<String, Object>> handleNotFoundException(Throwable ex) {
          var exception = GlobalException.builder()
             .status(404)
             .alert(new CustomAlert(SystemCodeEnum.C002DB))
+            .details(ex.getMessage())
             .build();
 
         return ResponseEntity.status(404).body(exception.toJson());
+    }
+
+    @ExceptionHandler({HttpMessageNotReadableException.class, NullPointerException.class})
+    public ResponseEntity<Map<String, Object>> handleHttpMessageNotReadable(Throwable ex) {
+         var exception = GlobalException.builder()
+             .status(400)
+             .alert(new CustomAlert(SystemCodeEnum.C036DB))
+             .details(ex.getMessage())
+             .build();
+
+         return ResponseEntity.status(400).body(exception.toJson());
     }
 }

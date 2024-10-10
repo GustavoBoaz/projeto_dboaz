@@ -32,7 +32,9 @@ public class GlobalInfoStep extends SpringAcceptanceTest {
 
     @When("`F1#` - make a GET request to {string}")
     public void make_a_get_request_to(String path) {
-        response = rest.getForEntity(path, Object.class);
+        response = rest
+            .withBasicAuth("dboaz", "dboaz")
+            .getForEntity(path, Object.class);
     }
 
     @Then("`F1#` - the response should have an HTTP status {int}")

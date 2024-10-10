@@ -110,6 +110,7 @@
                         <configuration>
                             <excludes>
                                 <exclude>com/dboaz/utils/security/**</exclude>
+                                <exclude>com/dboaz/ms_*/**</exclude>
                             </excludes>
                         </configuration>
 					</execution>

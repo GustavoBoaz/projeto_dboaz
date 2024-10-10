@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.dboaz.ms_auth.utils.constants.Route;
+import com.dboaz.ms_auth.core.utils.constants.Route;
 
 class RouteTest {
 
